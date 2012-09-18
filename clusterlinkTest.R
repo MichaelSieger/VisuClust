@@ -1,0 +1,10 @@
+library(MASS)
+source("/home/michi/linkmapsWorkspace/linkmaps/R/clusterlink.R")
+
+MD <- read.table("/home/tamaran/linkmapsWorkspace/Milch.Dat",dec=",",header=T)
+D <- as.matrix(dist(MD[3:6]))
+HK <- princomp(MD[3:6], cor=F, scores=T)
+S <- sammon(D, HK$scores[,1:2])
+Ds <- as.matrix(dist(S$points))
+k <- kmeans(D,center=5)
+clusterlink(S$points, k$cluster)
