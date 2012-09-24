@@ -1,7 +1,7 @@
 library(MASS)
-source("/home/michi/linkmapsWorkspace/linkmaps/R/clusterlink.R")
+source("~/linkmapsWorkspace/linkmaps/R/clusterlink.R")
 
-MD <- read.table("/home/tamaran/linkmapsWorkspace/Milch.Dat",dec=",",header=T)
+MD <- read.table("~/linkmapsWorkspace/Milch.Dat",dec=",",header=T)
 D <- as.matrix(dist(MD[3:6]))
 HK <- princomp(MD[3:6], cor=F, scores=T)
 S <- sammon(D, HK$scores[,1:2])
