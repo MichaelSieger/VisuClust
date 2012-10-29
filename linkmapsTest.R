@@ -1,10 +1,9 @@
 library(MASS)
 
 source("~/linkmapsWorkspace/linkmaps/R/linkmaps.R")
-MD <- read.table("~/linkmapsWorkspace/Milch.Dat",dec=",",header=T)
+MD <- read.table("~/linkmapsWorkspace/Milch.Dat",dec=",",header=TRUE)
 D <- as.matrix(dist(MD[3:6]))
-HK <- princomp(MD[3:6], cor=F, scores=T)
+HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
-Ds <- as.matrix(dist(S$points))
 k <- kmeans(D,center=5)
-linkmap(S$points, D, linecolors=c("red","green","blue"), linewidths=c(3,2,1), cluster=k$cluster,main="Milch")
+linkmap(S$points, D, cluster=k$cluster,main="Milch")

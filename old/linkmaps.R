@@ -1,18 +1,39 @@
 linkmap <- function(X, D, linetypes=c(1,1,3), linecolors=c(1,1,1), linewidths=c(3,1,1),
-						 labels = NULL, cluster = NULL, ...) {
+						 labels = NULL, cluster = NULL, legendDigits = 2, ...) {
 
-	library(rpanel)
+	library(aplpack)
 
 	maps.format <- function(number){
-		round(number, 2)
+		round(number, legendDigits)
 	}
 
 	maps.createLegendString <- function(v1, v2){
 		paste(v1, "<= x <", v2)
 	}
 
-	maps.updateGUI <- function(panel){
+	maps.updateGUI <- function(){
 		
+		moved1 = (slider(no=1) == maps.s1)
+		moved2 = (slider(no=2) == maps.s2)
+		moved3 = (slider(no=3) == maps.s2)
+		
+		if(moved1){
+		  if(slider(no=2) < slider(no=1)){
+			  slider(set.no.value=c(2, slider(no=1)))
+		  }
+		  if(slider(no=3) < slider(no=1)){
+			  slider(set.no.value=c(3, slider(no=2)))
+		  }
+		}
+		if(moved2)
+		{
+		  if(slider(no=3) < slider(no=2)){
+			  slider(set.no.value=c(3, slider(no=2)))
+		  }
+		}
+		maps.s1 <<- slider(no=1)
+		maps.s2 <<- slider(no=2)
+		maps.s3 <<- slider(no=3)
 	}
 
 	maps.createCircleColors <- function(colors){
@@ -24,10 +45,10 @@ linkmap <- function(X, D, linetypes=c(1,1,3), linecolors=c(1,1,1), linewidths=c(
 		revCol
 	}
 
-	maps.drawLegend <- function(s1, s2, s3){
-		t1 <- maps.format(s1)
-		t2 <- maps.format(s2)
-		t3 <- maps.format(s3)
+	maps.drawLegend <- function(){
+		t1 <- maps.format(maps.s1)
+		t2 <- maps.format(maps.s2)
+		t3 <- maps.format(maps.s3)
 		legend("topleft",  
 				c(maps.createLegendString(0, t1), 
 					maps.createLegendString(t1, t2), 
@@ -35,38 +56,18 @@ linkmap <- function(X, D, linetypes=c(1,1,3), linecolors=c(1,1,1), linewidths=c(
 					lwd=linewidths, lty=linetypes, col=linecolors)
 	}
 
-	maps.draw <- function(panel){
-		maps.updateGUI(panel)
+	maps.draw <- function(){
+		maps.updateGUI()
 		dev.hold()
 		par(xpd=T, ask=F)
-		plot(X, pch=21,col=circleCols[cluster], bg = clusterCols[cluster], ...)
-		xRange <- max(X[,1])-min(X[,1])
-		yRange <- max(X[,2])-min(X[,2])
-		s1 <- panel$s1
-		s2 <- panel$s2
-		s3 <- panel$s3
-		if(length(s1) == 0){
-			s1 <- 0
-		}
-		if(length(s2) == 0){
-			s2 <- 0
-		}
-		if(length(s3) == 0){
-			s3 <- 0
-		}
-		if(s2 < s1){
-			s2 <- s1
-		}
-		if(s3 < s2){
-			s3 <- s2
-		}
-		for(j in 1:n){
+		plot(X, pch=21,col=maps.circleCols[cluster], bg = maps.clusterCols[cluster], ...)
+		for(j in 1:maps.n){
 			for(i in 1:j){
 				if(i != j){
-					if(D[i,j] < s3){
-						if(D[i,j] >= s2){
+					if(D[i,j] < maps.s3){
+						if(D[i,j] >= maps.s2){
 							segments(X[i,1],X[i,2],X[j,1],X[j,2], lty=linetypes[3], col=linecolors[3], lwd=linewidths[3])
-						}else if(D[i,j] >= s1){
+						}else if(D[i,j] >= maps.s1){
 							segments(X[i,1],X[i,2],X[j,1],X[j,2], lty=linetypes[2], col=linecolors[2], lwd=linewidths[2])
 						}else{
 							segments(X[i,1],X[i,2],X[j,1],X[j,2], lty=linetypes[1], col=linecolors[1], lwd=linewidths[1])
@@ -80,26 +81,43 @@ linkmap <- function(X, D, linetypes=c(1,1,3), linecolors=c(1,1,1), linewidths=c(
 			relDist = 0.02
 			text(X[,1]+xRange*relDist,X[,2]+yRange*relDist,labels)
 		}
-		maps.drawLegend(s1, s2, s3)
+		maps.drawLegend()
 		dev.flush()
-		panel
 	}
 
-	n <- length(X[,1])
-	if(length(cluster) == 0)
+	maps.sliderCallback <- function(...){
+		maps.draw()
+	}
+
+	maps.init <- function()
 	{
-		cluster <- rep(1,n)
+		maps.n <<- length(X[,1])
+		if(length(cluster) == 0)
+		{
+			cluster <- rep(1,maps.n)
+		}
+		nCluster <- length(unique(cluster))
+		maps.clusterCols <<- rainbow(nCluster)
+		maps.circleCols <<- maps.createCircleColors(maps.clusterCols)
+		min <- min(D[D !=0])*0.9	#below smallest nonzero distance
+		max <- max(D)
+		maps.s1 <<- min
+		maps.s2 <<- min
+		maps.s3 <<- min
+
+		slider(maps.sliderCallback, 
+				sl.names=c("D1", "D2", "D3"),
+				sl.mins=rep(min,3),
+				sl.maxs=rep(max,3),
+				sl.deltas=rep(0.1,3), 
+				sl.defaults=rep(0,3),
+				prompt=T,	
+				title="Thresholds")
 	}
-	nCluster <- length(unique(cluster))
-	clusterCols <- rainbow(nCluster)
-	circleCols <- maps.createCircleColors(clusterCols)
 
-
-	min <- min(D[D !=0])*0.9	#below smallest nonzero distance
-	max <- max(D)
-	panel <- rp.control(title = "Thresholds", slo=0.5, int=1.0, size=c(400, 400))
-	rp.slider(panel, var=s1,  from=min, to=max, title="D1", action=maps.draw, pos=c(5, 5, 290, 70), showvalue=TRUE, log=T)
-	rp.slider(panel, var=s2, from=min, to=max, title="D2", action=maps.draw, pos=c(5, 70, 290, 90), showvalue=TRUE, log=T)
-	rp.slider(panel, var=s3, from=min, to=max, title="D3", action=maps.draw, pos=c(5, 135, 290, 110), showvalue=TRUE, log=T)
-
+	maps.init()
 }
+
+
+
+
