@@ -9,11 +9,11 @@ linkmap <- function(X, D=as.matrix(dist(X)), linetypes=c("solid","dotted"), line
 	{
 		print("The dimension of X must be [n, 2]")
 	}
-	if(ddim[1] != ddim[2])
+	if(length(ddim) == 0 || ddimddim[1] != ddim[2])
 	{
 		print("The distance matrix is not quadratic")
 	}
-	if(xdim[1] != ddim[1])
+	if(length(xdim) == 0 || xdim[1] != ddim[1])
 	{
 		print("The number of points doesnt match the size of the distance matrix")
 	}
