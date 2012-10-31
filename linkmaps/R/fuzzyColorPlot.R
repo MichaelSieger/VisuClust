@@ -1,6 +1,5 @@
-fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(1,k), ...)
+fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), ...)
 {
-	# vlt sammon mit in die funktion nehmen
 	
 	library(aplpack)
 	
@@ -78,7 +77,7 @@ fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=re
 	{
 		fcContext.updateColors()
 		par(xpd=T, ask=F)
-		plot(Xs, col=fcContext.colors, bg=fcContext.colors, pch=21, ...)
+		plot(Xs, col=fcContext.colors, bg=fcContext.colors, pch=clusterSymbols, ...)
 	}
 	
 	fcContext.init()

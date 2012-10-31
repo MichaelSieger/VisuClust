@@ -1,6 +1,5 @@
 fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(1,k), ...)
 {
-	# vlt sammon mit in die funktion nehmen
 	
 	library(aplpack)
 	
@@ -67,7 +66,7 @@ fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=re
 		strongestMemberships <- rep(NA, fcContext.n)
 		for(i in 1:fcContext.n)
 		{
-			strongestMemberships
+			strongestMemberships[i] <- max(fcContext.clustering$membership[i,])
 		}
 		fcContext.colors <<- fcContext.rgbList2color(fcContext.clusterColorValues[,fcContext.clustering$clustering], 
 		strongestMemberships
