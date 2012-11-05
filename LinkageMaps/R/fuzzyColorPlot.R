@@ -2,6 +2,7 @@ fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=re
 {
 	
 	library(aplpack)
+	library(cluster)
 	
 	fcContext.init <- function()
 	{
@@ -48,7 +49,7 @@ fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=re
 	{
 		if(fcContext.getSliderValue() == 1)
 		{
-			fcContext.symbols <<- clusterSymbols[clustering$clustering]
+			fcContext.symbols <<- clusterSymbols[fcContext.clustering$clustering]
 		}
 		else
 		{

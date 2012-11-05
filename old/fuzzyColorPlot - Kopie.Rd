@@ -117,8 +117,9 @@ Row  Name              Fett   Eiweiss Laktose Asche
 library(cluster)
 library(MASS)
 
-D = dist(MD[3:6])
+D <- as.matrix(dist(MD[3:6]))
 HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
+clustering = fanny(MD[3:6], 5)
 S <- sammon(D, HK$scores[,1:2])
 
 # A very basic example showing the default colors an symbols

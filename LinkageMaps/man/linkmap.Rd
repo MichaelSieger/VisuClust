@@ -93,7 +93,7 @@ Row  Name             Fett Eiweiss Laktose Asche
  
 ", dec=",", header=TRUE)
 
-D <- as.matrix(dist(MD[3:6]))
+D <- dist(MD[3:6])
 HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 k <- kmeans(D,center=5)

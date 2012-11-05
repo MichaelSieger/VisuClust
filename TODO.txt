@@ -1,0 +1,1 @@
+ask=F in fuzzyColorPlot rausnehmen
