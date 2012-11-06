@@ -4,6 +4,13 @@ fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=re
 	library(aplpack)
 	library(cluster)
 	
+	#define variables to prevent them beeing global visible
+	fcContext.n = 1
+	fcContext.clustering = 1
+	fcContext.clusterColorValues = 1
+	fcContext.symbols = 1
+	fcContext.colors = 1
+	
 	fcContext.init <- function()
 	{
 		fcContext.clusterColorValues <<- col2rgb(clusterColors)

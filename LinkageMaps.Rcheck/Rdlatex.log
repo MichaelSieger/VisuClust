@@ -609,4 +609,4 @@ Transcript written on Rd2.log.
 Error in texi2dvi("Rd2.tex", pdf = (out_ext == "pdf"), quiet = FALSE,  : 
   unable to run 'pdflatex' on 'Rd2.tex'
 Error in running tools::texi2dvi
-You may want to clean up by 'rm -rf /tmp/RtmpmB9xjy/Rd2pdfcf94146c571'
+You may want to clean up by 'rm -rf /tmp/Rtmp8H9d2p/Rd2pdf187e263c465a'
