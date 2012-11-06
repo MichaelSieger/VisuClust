@@ -75,23 +75,23 @@ No file Rd2.aux.
 (/usr/share/texmf-texlive/tex/latex/inconsolata/t1fi4.fd)
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd)
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
-Overfull \hbox (108.11429pt too wide) in paragraph at lines 43--43
+Overfull \hbox (108.11429pt too wide) in paragraph at lines 46--46
  []\T1/fi4/m/n/10 fuzzyColorPlot(X, k, Xs, clusterColors=rainbow(k), clusterSym
 bols=rep(21,k), xlab="", ylab="", main="")[] 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.78088pt too wide) in paragraph at lines 103--103
+Overfull \hbox (6.78088pt too wide) in paragraph at lines 106--106
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSym
 bols=c("a","b", "c","d", "e"))[] 
 
-Overfull \hbox (60.78088pt too wide) in paragraph at lines 106--106
+Overfull \hbox (60.78088pt too wide) in paragraph at lines 109--109
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterCol
 ors=rep("black", 5), clusterSymbols=15:19)[] 
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def) [2]
-Overfull \hbox (98.11426pt too wide) in paragraph at lines 122--122
+Overfull \hbox (98.11426pt too wide) in paragraph at lines 125--125
  []\T1/fi4/m/n/10 linkmap(X, D=dist(X), linetypes=c("solid","dotted"), linecolo
 rs=c("red","green"), linewidths=c(1,1),[] 
 
-Overfull \hbox (58.11441pt too wide) in paragraph at lines 123--123
+Overfull \hbox (58.11441pt too wide) in paragraph at lines 126--126
  [] \T1/fi4/m/n/10 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits =
  2, xlab = "", ylab = "", main = "")[] 
 [3] (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
@@ -111,7 +111,7 @@ vetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></u
 sr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texli
 ve/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 75573 bytes).
+Output written on Rd2.pdf (4 pages, 75957 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2009] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (13 entries accepted, 0 rejected).
@@ -192,24 +192,25 @@ Writing index file Rd2.idx
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty)) (./Rd2.out)
 (./Rd2.out) (/usr/share/texmf-texlive/tex/latex/inconsolata/t1fi4.fd)
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
-(/usr/share/texmf-texlive/tex/latex/base/utf8.def)
-Overfull \hbox (108.11429pt too wide) in paragraph at lines 43--43
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def) [1{/var/lib/texmf/fonts/map/
+pdftex/updmap/pdftex.map}]
+Overfull \hbox (108.11429pt too wide) in paragraph at lines 46--46
  []\T1/fi4/m/n/10 fuzzyColorPlot(X, k, Xs, clusterColors=rainbow(k), clusterSym
 bols=rep(21,k), xlab="", ylab="", main="")[] 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.78088pt too wide) in paragraph at lines 103--103
+[2]
+Overfull \hbox (6.78088pt too wide) in paragraph at lines 106--106
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSym
 bols=c("a","b", "c","d", "e"))[] 
-[2]
-Overfull \hbox (60.78088pt too wide) in paragraph at lines 106--106
+
+Overfull \hbox (60.78088pt too wide) in paragraph at lines 109--109
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterCol
 ors=rep("black", 5), clusterSymbols=15:19)[] 
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
-Overfull \hbox (98.11426pt too wide) in paragraph at lines 122--122
+Overfull \hbox (98.11426pt too wide) in paragraph at lines 125--125
  []\T1/fi4/m/n/10 linkmap(X, D=dist(X), linetypes=c("solid","dotted"), linecolo
 rs=c("red","green"), linewidths=c(1,1),[] 
 
-Overfull \hbox (58.11441pt too wide) in paragraph at lines 123--123
+Overfull \hbox (58.11441pt too wide) in paragraph at lines 126--126
  [] \T1/fi4/m/n/10 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits =
  2, xlab = "", ylab = "", main = "")[] 
 [3] (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
@@ -229,7 +230,7 @@ a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on Rd2.pdf (5 pages, 88190 bytes).
+Output written on Rd2.pdf (5 pages, 88565 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2009] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (13 entries accepted, 0 rejected).
@@ -310,24 +311,25 @@ Writing index file Rd2.idx
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty)) (./Rd2.out)
 (./Rd2.out) (/usr/share/texmf-texlive/tex/latex/inconsolata/t1fi4.fd)
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
-(/usr/share/texmf-texlive/tex/latex/base/utf8.def)
-Overfull \hbox (108.11429pt too wide) in paragraph at lines 43--43
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def) [1{/var/lib/texmf/fonts/map/
+pdftex/updmap/pdftex.map}]
+Overfull \hbox (108.11429pt too wide) in paragraph at lines 46--46
  []\T1/fi4/m/n/10 fuzzyColorPlot(X, k, Xs, clusterColors=rainbow(k), clusterSym
 bols=rep(21,k), xlab="", ylab="", main="")[] 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.78088pt too wide) in paragraph at lines 103--103
+[2]
+Overfull \hbox (6.78088pt too wide) in paragraph at lines 106--106
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSym
 bols=c("a","b", "c","d", "e"))[] 
-[2]
-Overfull \hbox (60.78088pt too wide) in paragraph at lines 106--106
+
+Overfull \hbox (60.78088pt too wide) in paragraph at lines 109--109
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterCol
 ors=rep("black", 5), clusterSymbols=15:19)[] 
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
-Overfull \hbox (98.11426pt too wide) in paragraph at lines 122--122
+Overfull \hbox (98.11426pt too wide) in paragraph at lines 125--125
  []\T1/fi4/m/n/10 linkmap(X, D=dist(X), linetypes=c("solid","dotted"), linecolo
 rs=c("red","green"), linewidths=c(1,1),[] 
 
-Overfull \hbox (58.11441pt too wide) in paragraph at lines 123--123
+Overfull \hbox (58.11441pt too wide) in paragraph at lines 126--126
  [] \T1/fi4/m/n/10 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits =
  2, xlab = "", ylab = "", main = "")[] 
 [3] (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
@@ -347,8 +349,8 @@ a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on Rd2.pdf (5 pages, 88749 bytes).
+Output written on Rd2.pdf (5 pages, 89124 bytes).
 Transcript written on Rd2.log.
 Saving output to 'LinkageMaps-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /tmp/Rtmpt0aCZ2/Rd2pdf65ba44b40ac9'
+You may want to clean up by 'rm -rf /tmp/RtmpWP0rk4/Rd2pdf6ad9472bb149'

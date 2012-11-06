@@ -47,7 +47,7 @@ nameEx("linkmap")
 flush(stderr()); flush(stdout())
 
 ### Name: linkmap
-### Title: Displays a linkage map
+### Title: Displays a Linkage Map
 ### Aliases: linkmap
 
 ### ** Examples

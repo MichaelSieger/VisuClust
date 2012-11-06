@@ -32,8 +32,8 @@
 * checking foreign function calls ... OK
 * checking R code for possible problems ... OK
 * checking Rd files ... NOTE
-prepare_Rd: fuzzyColorPlot.Rd:50-52: Dropping empty section \references
-prepare_Rd: fuzzyColorPlot.Rd:57-59: Dropping empty section \seealso
+prepare_Rd: fuzzyColorPlot.Rd:53-55: Dropping empty section \references
+prepare_Rd: fuzzyColorPlot.Rd:60-62: Dropping empty section \seealso
 prepare_Rd: linkmap.Rd:57-59: Dropping empty section \references
 prepare_Rd: linkmap.Rd:64-66: Dropping empty section \seealso
 * checking Rd metadata ... OK

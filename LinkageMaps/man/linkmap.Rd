@@ -1,7 +1,7 @@
 \name{linkmap}
 \alias{linkmap}
 \title{
-Displays a linkage map
+Displays a Linkage Map
 }
 \description{
 	A Linkage Map is a 2D scatter plot that displays the result of sammons nonlinear mapping. You define a number (possibly one) of ranges. Each point pair whose distance
@@ -25,10 +25,10 @@ linkmap(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green")
     The various line types are described in \link{par}
 }
   \item{linecolors}{
-    An array of colors. The size must match with line colors and line widths.
+    An array of colors. The size must match with line types and line widths.
 }
   \item{linewidths}{
-    An array of line widths. The size must match with line colors and line widths.
+    An array of line widths. The size must match with line colors and line types.
 }
   \item{labels}{
 	A string-array with labels for the points

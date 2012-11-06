@@ -4,10 +4,13 @@
 Displays a fuzzy color plot
 }
 \description{
-	A fuzzy color plot is a 2D scatterplot. 
-
-	The intensity of the color shows the probability of a point that he belongs to the selected cluster.
-	You may switch interactivly between the clusters. 
+	A fuzzy color plot is a 2D scatterplot that displays the result of sammons nonlinear mapping. Additionally a fuzzy clustering is made.
+	
+	If the slider is on the first position, all cluster are displayed together. 
+	The color/symbol indicates the nearest crisp clustering then. 
+	The color intensity displays the probability of membership to the nearest cluster.
+	
+	You can select a single cluster too. The color intensity shows the probability of membership to the selected cluster.
 
 	
 }
@@ -18,7 +21,7 @@ Displays a fuzzy color plot
 \arguments{
 
   \item{X}{
-	A matrix with size (nPoints,nDimensions) that contains the input data.
+	A matrix with size (nPoints,nDimensions) that contains the untransformed input data.
 }
 
   \item{k}{
@@ -34,7 +37,7 @@ Displays a fuzzy color plot
 }
 
   \item{clusterSymbols}{
-	A vector of size k that contains the symbols for the clusters. Not all symbols can be filled. If you want them filled you should use the symbols 15-20.
+	A vector of size k that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
 }
 
   \item{xlab}{

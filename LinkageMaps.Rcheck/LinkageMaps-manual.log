@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.5)  6 NOV 2012 11:50
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.5)  6 NOV 2012 13:28
 entering extended mode
  %&-line parsing enabled.
 **\catcode126=12 \def\normaltilde{~}\catcode126=13 \let~\normaltilde  \input ./
@@ -674,23 +674,23 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-)
-Overfull \hbox (108.11429pt too wide) in paragraph at lines 43--43
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (108.11429pt too wide) in paragraph at lines 46--46
  []\T1/fi4/m/n/10 fuzzyColorPlot(X, k, Xs, clusterColors=rainbow(k), clusterSym
 bols=rep(21,k), xlab="", ylab="", main="")[] 
  []
 
-[1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.78088pt too wide) in paragraph at lines 103--103
+[2]
+Overfull \hbox (6.78088pt too wide) in paragraph at lines 106--106
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSym
 bols=c("a","b", "c","d", "e"))[] 
  []
 
-[2]
-Overfull \hbox (60.78088pt too wide) in paragraph at lines 106--106
+
+Overfull \hbox (60.78088pt too wide) in paragraph at lines 109--109
  []\T1/fi4/m/n/9 ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterCol
 ors=rep("black", 5), clusterSymbols=15:19)[] 
  []
@@ -698,13 +698,13 @@ ors=rep("black", 5), clusterSymbols=15:19)[]
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (98.11426pt too wide) in paragraph at lines 122--122
+Overfull \hbox (98.11426pt too wide) in paragraph at lines 125--125
  []\T1/fi4/m/n/10 linkmap(X, D=dist(X), linetypes=c("solid","dotted"), linecolo
 rs=c("red","green"), linewidths=c(1,1),[] 
  []
 
 
-Overfull \hbox (58.11441pt too wide) in paragraph at lines 123--123
+Overfull \hbox (58.11441pt too wide) in paragraph at lines 126--126
  [] \T1/fi4/m/n/10 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits =
  2, xlab = "", ylab = "", main = "")[] 
  []
@@ -729,7 +729,7 @@ Here is how much of TeX's memory you used:
  8503 multiletter control sequences out of 15000+50000
  40684 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,5n,27p,349b,568s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,6n,27p,349b,568s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Rfn.par} has been referenced but does 
 not exist, replaced by a fixed one
 
@@ -744,7 +744,7 @@ a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on Rd2.pdf (5 pages, 88749 bytes).
+Output written on Rd2.pdf (5 pages, 89124 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  33 named destinations out of 1000 (max. 500000)
