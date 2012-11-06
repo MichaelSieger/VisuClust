@@ -30,13 +30,7 @@
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... NOTE
-fuzzyColorPlot : fcContext.updateColorsSingleCluster: no visible
-  binding for '<<-' assignment to ‘fcContext.colors’
-fuzzyColorPlot : fcContext.updateColorsAllCluster: no visible binding
-  for '<<-' assignment to ‘fcContext.colors’
-fuzzyColorPlot : fcContext.update: no visible binding for global
-  variable ‘fcContext.colors’
+* checking R code for possible problems ... OK
 * checking Rd files ... NOTE
 prepare_Rd: fuzzyColorPlot.Rd:50-52: Dropping empty section \references
 prepare_Rd: fuzzyColorPlot.Rd:57-59: Dropping empty section \seealso
@@ -47,6 +41,8 @@ prepare_Rd: linkmap.Rd:64-66: Dropping empty section \seealso
 * checking for missing documentation entries ... WARNING
 Undocumented code objects:
   ‘exampleSet1’ ‘exampleSet2’
+Undocumented data sets:
+  ‘Milch’ ‘Milch3’
 All user-level objects in a package should have documentation entries.
 See the chapter ‘Writing R documentation files’ in the ‘Writing R
 Extensions’ manual.
@@ -54,8 +50,14 @@ Extensions’ manual.
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... WARNING
+Files not of a type allowed in a ‘data’ directory:
+  ‘Milch.tab~’ ‘Milch3.tab~’
+Please use e.g. ‘inst/extdata’ for non-R data files
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
 * checking examples ... OK
-* checking PDF version of manual ... WARNING
-LaTeX errors when creating PDF version.
-This typically indicates Rd problems.
-* checking PDF version of manual without hyperrefs or index ... ERROR
+* checking PDF version of manual ... OK
+WARNING: There were 2 warnings, see
+  ‘/home/michi/linkmapsWorkspace/LinkageMaps.Rcheck/00check.log’
+for details

@@ -60,23 +60,23 @@ Michael Sieger <michael.sieger@student.hswt.de>
 \examples{
 
 # The example data
-MD <- exampleSet1()
+data("Milch")
 
 library(cluster)
 library(MASS)
 
-D = dist(MD[3:6])
-HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
+D = dist(Milch[3:6])
+HK <- princomp(Milch[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 
 # A very basic example showing the default colors an symbols
-fuzzyColorPlot(MD[3:6], 5, S$points)
+fuzzyColorPlot(Milch[3:6], 5, S$points)
 
 # Custom symbols 
-\dontrun{fuzzyColorPlot(MD[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
+\dontrun{fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
 
 # A Black-White Plot
-\dontrun{fuzzyColorPlot(MD[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
+\dontrun{fuzzyColorPlot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
 
 
 }

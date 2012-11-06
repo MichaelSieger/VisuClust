@@ -18,23 +18,23 @@ flush(stderr()); flush(stdout())
 
 
 # The example data
-MD <- exampleSet1()
+data("Milch")
 
 library(cluster)
 library(MASS)
 
-D = dist(MD[3:6])
-HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
+D = dist(Milch[3:6])
+HK <- princomp(Milch[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 
 # A very basic example showing the default colors an symbols
-fuzzyColorPlot(MD[3:6], 5, S$points)
+fuzzyColorPlot(Milch[3:6], 5, S$points)
 
 # Custom symbols 
-## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
+## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
 
 # A Black-White Plot
-## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
+## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
 
 
 
@@ -55,10 +55,10 @@ flush(stderr()); flush(stdout())
 
 library(MASS)
 
-MD <- exampleSet2()
+data("Milch3")
 
-D <- dist(MD[3:6])
-HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
+D <- dist(Milch3[3:6])
+HK <- princomp(Milch3[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 k <- kmeans(D,center=5)
 linkmap(S$points, D, cluster=k$cluster,main="Milch")

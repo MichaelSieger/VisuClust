@@ -68,10 +68,10 @@ Michael Sieger <michael.sieger@student.hswt.de>
 
 library(MASS)
 
-MD <- exampleSet2()
+data("Milch3")
 
-D <- dist(MD[3:6])
-HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
+D <- dist(Milch3[3:6])
+HK <- princomp(Milch3[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 k <- kmeans(D,center=5)
 linkmap(S$points, D, cluster=k$cluster,main="Milch")

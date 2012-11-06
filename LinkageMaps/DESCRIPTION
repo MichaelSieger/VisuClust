@@ -9,4 +9,4 @@ Depends: aplpack, cluster
 Maintainer: Michael Sieger <michael.sieger@student.hswt.de>
 Description: Linkage Maps provide a way to display multivariate data. They are based on sammons-nonlinear mapping and connect the datapoints with lines depending on the real distance.
 URL: http://www.hswt.de/
-License: GPL
+License: LGPL

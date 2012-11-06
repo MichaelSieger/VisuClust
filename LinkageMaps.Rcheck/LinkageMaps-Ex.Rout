@@ -42,26 +42,26 @@ Loading required package: cluster
 > 
 > 
 > # The example data
-> MD <- exampleSet1()
+> data("Milch")
 > 
 > library(cluster)
 > library(MASS)
 > 
-> D = dist(MD[3:6])
-> HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
+> D = dist(Milch[3:6])
+> HK <- princomp(Milch[3:6], cor=FALSE, scores=TRUE)
 > S <- sammon(D, HK$scores[,1:2])
 Initial stress        : 0.00127
 stress after  10 iters: 0.00058, magic = 0.500
 stress after  20 iters: 0.00058, magic = 0.500
 > 
 > # A very basic example showing the default colors an symbols
-> fuzzyColorPlot(MD[3:6], 5, S$points)
+> fuzzyColorPlot(Milch[3:6], 5, S$points)
 > 
 > # Custom symbols 
-> ## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
+> ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
 > 
 > # A Black-White Plot
-> ## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
+> ## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
 > 
 > 
 > 
@@ -85,10 +85,10 @@ detaching ‘package:MASS’
 > 
 > library(MASS)
 > 
-> MD <- exampleSet2()
+> data("Milch3")
 > 
-> D <- dist(MD[3:6])
-> HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
+> D <- dist(Milch3[3:6])
+> HK <- princomp(Milch3[3:6], cor=FALSE, scores=TRUE)
 > S <- sammon(D, HK$scores[,1:2])
 Initial stress        : 0.00103
 stress after  10 iters: 0.00029, magic = 0.500
@@ -102,7 +102,7 @@ stress after  20 iters: 0.00029, magic = 0.500
 > ### * <FOOTER>
 > ###
 > cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.588 0.028 0.782 0 0 
+Time elapsed:  0.808 0.06 1.075 0 0 
 > grDevices::dev.off()
 null device 
           1 
