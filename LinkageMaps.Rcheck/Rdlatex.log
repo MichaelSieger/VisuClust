@@ -600,8 +600,8 @@ mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ptmro
 nd.
 <to be read again> 
                    relax 
-l.179 D <- dist(MD[3:6])
-                        
+l.179 
+      
 [2] [3] (./Rd2.aux) )
 (see the transcript file for additional information)
 Output written on Rd2.pdf (3 pages, 1673 bytes).
@@ -609,4 +609,4 @@ Transcript written on Rd2.log.
 Error in texi2dvi("Rd2.tex", pdf = (out_ext == "pdf"), quiet = FALSE,  : 
   unable to run 'pdflatex' on 'Rd2.tex'
 Error in running tools::texi2dvi
-You may want to clean up by 'rm -rf /tmp/Rtmp1mbGPS/Rd2pdf1cc365a3d8a5'
+You may want to clean up by 'rm -rf /tmp/RtmpmB9xjy/Rd2pdfcf94146c571'

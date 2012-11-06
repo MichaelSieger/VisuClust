@@ -58,10 +58,11 @@ stress after  20 iters: 0.00058, magic = 0.500
 > fuzzyColorPlot(MD[3:6], 5, S$points)
 > 
 > # Custom symbols 
-> fuzzyColorPlot(MD[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
+> ## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
 > 
 > # A Black-White Plot
-> fuzzyColorPlot(MD[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
+> ## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
+> 
 > 
 > 
 > 
@@ -101,7 +102,7 @@ stress after  20 iters: 0.00029, magic = 0.500
 > ### * <FOOTER>
 > ###
 > cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.692 0.048 0.997 0 0 
+Time elapsed:  0.792 0.052 1.408 0 0 
 > grDevices::dev.off()
 null device 
           1 

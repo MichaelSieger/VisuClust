@@ -63,45 +63,8 @@ fuzzyColorPlot : fcContext.update: no visible binding for global
   variable ‘fcContext.colors’
 fuzzyColorPlot : fcContext.update: no visible binding for global
   variable ‘fcContext.symbols’
-linkmap : maps.getSliderValues: no visible binding for global variable
-  ‘maps.nLines’
-linkmap : maps.updateGUI: no visible binding for global variable
-  ‘maps.s’
-linkmap : maps.updateGUI: no visible binding for global variable
-  ‘maps.nLines’
-linkmap : maps.updateGUI: no visible binding for '<<-' assignment to
-  ‘maps.s’
-linkmap : maps.drawLegend: no visible binding for global variable
-  ‘maps.nLines’
-linkmap : maps.drawLegend: no visible binding for global variable
-  ‘maps.s’
-linkmap : maps.draw: no visible binding for global variable
-  ‘maps.circleCols’
-linkmap : maps.draw: no visible binding for global variable
-  ‘maps.clusterCols’
-linkmap : maps.draw: no visible binding for global variable ‘maps.n’
-linkmap : maps.draw: no visible binding for global variable
-  ‘maps.nLines’
-linkmap : maps.draw: no visible binding for global variable ‘maps.s’
 linkmap : maps.draw: no visible binding for global variable ‘xRange’
 linkmap : maps.draw: no visible binding for global variable ‘yRange’
-linkmap : maps.createSliderNames: no visible binding for global
-  variable ‘maps.nLines’
-linkmap : maps.init: no visible binding for '<<-' assignment to
-  ‘maps.nLines’
-linkmap : maps.init: no visible binding for '<<-' assignment to
-  ‘maps.n’
-linkmap : maps.init: no visible binding for global variable ‘maps.n’
-linkmap : maps.init: no visible binding for '<<-' assignment to
-  ‘maps.clusterCols’
-linkmap : maps.init: no visible binding for '<<-' assignment to
-  ‘maps.circleCols’
-linkmap : maps.init: no visible binding for global variable
-  ‘maps.clusterCols’
-linkmap : maps.init: no visible binding for '<<-' assignment to
-  ‘maps.s’
-linkmap : maps.init: no visible binding for global variable
-  ‘maps.nLines’
 * checking Rd files ... NOTE
 prepare_Rd: fuzzyColorPlot.Rd:50-52: Dropping empty section \references
 prepare_Rd: fuzzyColorPlot.Rd:57-59: Dropping empty section \seealso

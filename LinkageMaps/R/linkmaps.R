@@ -1,5 +1,8 @@
 linkmap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
 						 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits = 2, xlab = "", ylab = "", main = ""){	 
+
+	library(aplpack)
+
 	# checking input
 	xdim = dim(X)
 	llen = length(labels)
@@ -25,9 +28,16 @@ linkmap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("r
 		print("maxValue is not between 0 and 1")
 	}	
 	D = as.matrix(D)
-	
-	library(aplpack)
 
+	#defining the variables to prevent them beeing global visible
+	maps.s = 1
+	maps.nLines = 1
+	maps.clusterCols = 1
+	maps.circleCols = 1
+	maps.n = 1
+	maps.nCluster = 1
+	maps.xRange = 1
+	maps.yRange = 1
 	
 	#functions
 	maps.format <- function(number){
@@ -124,7 +134,7 @@ linkmap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("r
 		if(length(labels)!=0)
 		{
 			relDist = 0.02
-			text(X[,1]+xRange*relDist,X[,2]+yRange*relDist,labels)
+			text(X[,1]+maps.xRange*relDist,X[,2]+maps.yRange*relDist,labels)
 		}
 		maps.drawLegend()
 		dev.flush()
@@ -150,17 +160,19 @@ linkmap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("r
 		{
 			cluster <<- rep(1,maps.n)
 			maps.clusterCols <<- rgb(0,0,0,0)
-			nCluster = 1
+			maps.nCluster <<- 1
 		}
 		else
 		{
-			nCluster <<- length(unique(cluster))
-			maps.clusterCols <<- rainbow(nCluster)
+			maps.nCluster <<- length(unique(cluster))
+			maps.clusterCols <<- rainbow(maps.nCluster)
 		}
 		maps.circleCols <<- maps.createCircleColors(maps.clusterCols)
 		min <- min(D[D !=0])*0.9	#below smallest nonzero distance
 		max <- max(D)*maxValue
 		maps.s <<- rep(min, maps.nLines)
+		maps.xRange <<- max(X[,1])-min(X[,1])
+		maps.yRange <<- max(X[,2])-min(X[,2])
 
 		slider(maps.sliderCallback, 
 				sl.names=maps.createSliderNames(),

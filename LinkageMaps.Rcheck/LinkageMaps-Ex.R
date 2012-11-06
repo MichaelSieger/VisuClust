@@ -31,10 +31,11 @@ S <- sammon(D, HK$scores[,1:2])
 fuzzyColorPlot(MD[3:6], 5, S$points)
 
 # Custom symbols 
-fuzzyColorPlot(MD[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
+## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
 
 # A Black-White Plot
-fuzzyColorPlot(MD[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
+## Not run: fuzzyColorPlot(MD[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
+
 
 
 
