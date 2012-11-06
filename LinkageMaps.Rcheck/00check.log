@@ -38,26 +38,13 @@ prepare_Rd: linkmap.Rd:57-59: Dropping empty section \references
 prepare_Rd: linkmap.Rd:64-66: Dropping empty section \seealso
 * checking Rd metadata ... OK
 * checking Rd cross-references ... OK
-* checking for missing documentation entries ... WARNING
-Undocumented code objects:
-  ‘exampleSet1’ ‘exampleSet2’
-Undocumented data sets:
-  ‘Milch’ ‘Milch3’
-All user-level objects in a package should have documentation entries.
-See the chapter ‘Writing R documentation files’ in the ‘Writing R
-Extensions’ manual.
+* checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking contents of ‘data’ directory ... WARNING
-Files not of a type allowed in a ‘data’ directory:
-  ‘Milch.tab~’ ‘Milch3.tab~’
-Please use e.g. ‘inst/extdata’ for non-R data files
+* checking contents of ‘data’ directory ... OK
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking examples ... OK
 * checking PDF version of manual ... OK
-WARNING: There were 2 warnings, see
-  ‘/home/michi/linkmapsWorkspace/LinkageMaps.Rcheck/00check.log’
-for details
