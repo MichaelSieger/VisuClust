@@ -90,7 +90,7 @@ fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=re
 	{
 		fcContext.updateSymbols();
 		fcContext.updateColors()
-		par(xpd=T)
+		par(xpd=T, ask=F)
 		plot(Xs, col=fcContext.colors, bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main)
 	}
 	

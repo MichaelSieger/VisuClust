@@ -304,102 +304,102 @@ mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input pcrr8
 .
 <to be read again> 
                    relax 
-l.20 ...er }\email{michael.sieger@student.hswt.de}
+l.21 ...er }\email{michael.sieger@student.hswt.de}
                                                   \AsIs{}
 ! \textfont 0 is undefined (character h).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character t).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character t).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character p).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character :).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character /).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character /).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character w).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character w).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character w).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character .).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character h).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character s).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character w).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character t).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character .).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character d).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character e).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 ! \textfont 0 is undefined (character /).
 \Url@FormatString ...\Url@String \UrlRight \m@th $
                                                   
-l.22 \item[URL]\AsIs{}\url{http://www.hswt.de/}
+l.23 \item[URL]\AsIs{}\url{http://www.hswt.de/}
                                                \AsIs{}
 No file Rd2.toc.
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
@@ -464,18 +464,18 @@ mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input nullf
 nd.
 <to be read again> 
                    relax 
-l.27 ...splays a fuzzy color plot}{fuzzyColorPlot}
+l.28 ...splays a fuzzy color plot}{fuzzyColorPlot}
                                                   
 ! Font T1/ptm/bx/n/14.4=ptmb8t at 14.4pt not loadable: Metric (TFM) file not fo
 und.
 <to be read again> 
                    relax 
-l.27 ...splays a fuzzy color plot}{fuzzyColorPlot}
+l.28 ...splays a fuzzy color plot}{fuzzyColorPlot}
                                                   
 ! Font \T1/ptm/b/n/14.4=nullfont not loadable: Metric (TFM) file not found.
 <to be read again> 
                    \relax 
-l.27 ...splays a fuzzy color plot}{fuzzyColorPlot}
+l.28 ...splays a fuzzy color plot}{fuzzyColorPlot}
                                                   
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd)
 kpathsea: Running mktextfm phvr8t
@@ -558,25 +558,25 @@ mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input pcrr8
 nd.
 <to be read again> 
                    relax 
-l.27 ...splays a fuzzy color plot}{fuzzyColorPlot}
+l.28 ...splays a fuzzy color plot}{fuzzyColorPlot}
                                                   
 ! Font T1/ptm/m/it/10=ptmri8t at 10.0pt not loadable: Metric (TFM) file not fou
 nd.
 <to be read again> 
                    relax 
-l.27 ...splays a fuzzy color plot}{fuzzyColorPlot}
+l.28 ...splays a fuzzy color plot}{fuzzyColorPlot}
                                                   
 ! Font T1/ptm/m/n/9=ptmr8t at 9.0pt not loadable: Metric (TFM) file not found.
 <to be read again> 
                    relax 
-l.84 \begin{ExampleCode}
+l.85 \begin{ExampleCode}
                         
 ! Font T1/pcr/m/n/9=pcrr8t at 9.0pt not loadable: Metric (TFM) file not found.
 <to be read again> 
                    relax 
-l.84 \begin{ExampleCode}
+l.85 \begin{ExampleCode}
                         
-[1]
+[1] (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
 kpathsea: Running mktextfm ptmro8t
 /usr/share/texmf/web2c/mktexnam: Could not map source abbreviation  for ptmro8t.
 /usr/share/texmf/web2c/mktexnam: Need to update ?
@@ -596,42 +596,17 @@ Transcript written on mfput.log.
 grep: ptmro8t.log: No such file or directory
 mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ptmro8t' failed to make ptmro8t.tfm.
 
-kpathsea: Running mktextfm phvr8t
-/usr/share/texmf/web2c/mktexnam: Could not map source abbreviation  for phvr8t.
-/usr/share/texmf/web2c/mktexnam: Need to update ?
-mktextfm: Running mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input phvr8t
-This is METAFONT, Version 2.718281 (TeX Live 2009/Debian)
-
-kpathsea: Running mktexmf phvr8t
-
-! I can't find file `phvr8t'.
-<*> ...:=ljfour; mag:=1; nonstopmode; input phvr8t
-                                                  
-Please type another input file name
-! Emergency stop.
-<*> ...:=ljfour; mag:=1; nonstopmode; input phvr8t
-                                                  
-Transcript written on mfput.log.
-grep: phvr8t.log: No such file or directory
-mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input phvr8t' failed to make phvr8t.tfm.
-
 ! Font T1/ptm/m/sl/10=ptmro8t at 10.0pt not loadable: Metric (TFM) file not fou
 nd.
 <to be read again> 
                    relax 
-l.136 ...         33,0     12,5       1,1      1,6
-                                                  
-! Font T1/phv/m/n/10=phvr8t at 10.0pt not loadable: Metric (TFM) file not found
-.
-<to be read again> 
-                   relax 
-l.136 ...         33,0     12,5       1,1      1,6
-                                                  
-[2] (/usr/share/texmf-texlive/tex/latex/base/utf8.def) [3] [4] (./Rd2.aux) )
+l.179 D <- dist(MD[3:6])
+                        
+[2] [3] (./Rd2.aux) )
 (see the transcript file for additional information)
-Output written on Rd2.pdf (4 pages, 1982 bytes).
+Output written on Rd2.pdf (3 pages, 1673 bytes).
 Transcript written on Rd2.log.
 Error in texi2dvi("Rd2.tex", pdf = (out_ext == "pdf"), quiet = FALSE,  : 
   unable to run 'pdflatex' on 'Rd2.tex'
 Error in running tools::texi2dvi
-You may want to clean up by 'rm -rf /tmp/RtmpYW0XSP/Rd2pdf28591f7ce31f'
+You may want to clean up by 'rm -rf /tmp/Rtmp1mbGPS/Rd2pdf1cc365a3d8a5'

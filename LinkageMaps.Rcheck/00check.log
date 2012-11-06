@@ -26,10 +26,7 @@
 * checking whether the package can be unloaded cleanly ... OK
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
-* checking for unstated dependencies in R code ... WARNING
-‘library’ or ‘require’ call not declared from: ‘aplpack’
-See the information on DESCRIPTION files in the chapter ‘Creating R
-packages’ of the ‘Writing R Extensions’ manual.
+* checking for unstated dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
@@ -38,18 +35,12 @@ fuzzyColorPlot : fcContext.init: no visible binding for '<<-'
   assignment to ‘fcContext.clusterColorValues’
 fuzzyColorPlot : fcContext.init: no visible binding for '<<-'
   assignment to ‘fcContext.clustering’
-fuzzyColorPlot : fcContext.init: no visible global function definition
-  for ‘fanny’
 fuzzyColorPlot : fcContext.init: no visible binding for '<<-'
   assignment to ‘fcContext.n’
-fuzzyColorPlot : fcContext.init: no visible global function definition
-  for ‘slider’
-fuzzyColorPlot : fcContext.getSliderValue: no visible global function
-  definition for ‘slider’
 fuzzyColorPlot : fcContext.updateSymbols: no visible binding for '<<-'
   assignment to ‘fcContext.symbols’
 fuzzyColorPlot : fcContext.updateSymbols: no visible binding for global
-  variable ‘clustering’
+  variable ‘fcContext.clustering’
 fuzzyColorPlot : fcContext.rgbList2color: no visible binding for global
   variable ‘fcContext.n’
 fuzzyColorPlot : fcContext.updateColorsSingleCluster: no visible
@@ -74,14 +65,10 @@ fuzzyColorPlot : fcContext.update: no visible binding for global
   variable ‘fcContext.symbols’
 linkmap : maps.getSliderValues: no visible binding for global variable
   ‘maps.nLines’
-linkmap : maps.getSliderValues: no visible global function definition
-  for ‘slider’
 linkmap : maps.updateGUI: no visible binding for global variable
   ‘maps.s’
 linkmap : maps.updateGUI: no visible binding for global variable
   ‘maps.nLines’
-linkmap : maps.updateGUI: no visible global function definition for
-  ‘slider’
 linkmap : maps.updateGUI: no visible binding for '<<-' assignment to
   ‘maps.s’
 linkmap : maps.drawLegend: no visible binding for global variable
@@ -115,7 +102,6 @@ linkmap : maps.init: no visible binding for '<<-' assignment to
   ‘maps.s’
 linkmap : maps.init: no visible binding for global variable
   ‘maps.nLines’
-linkmap : maps.init: no visible global function definition for ‘slider’
 * checking Rd files ... NOTE
 prepare_Rd: fuzzyColorPlot.Rd:50-52: Dropping empty section \references
 prepare_Rd: fuzzyColorPlot.Rd:57-59: Dropping empty section \seealso
@@ -123,12 +109,16 @@ prepare_Rd: linkmap.Rd:57-59: Dropping empty section \references
 prepare_Rd: linkmap.Rd:64-66: Dropping empty section \seealso
 * checking Rd metadata ... OK
 * checking Rd cross-references ... OK
-* checking for missing documentation entries ... OK
+* checking for missing documentation entries ... WARNING
+Undocumented code objects:
+  ‘exampleSet1’ ‘exampleSet2’
+All user-level objects in a package should have documentation entries.
+See the chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
-* checking for unstated dependencies in examples ... NOTE
-‘library’ or ‘require’ call not declared from: ‘cluster’
+* checking for unstated dependencies in examples ... OK
 * checking examples ... OK
 * checking PDF version of manual ... WARNING
 LaTeX errors when creating PDF version.
