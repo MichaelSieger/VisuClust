@@ -102,7 +102,7 @@ stress after  20 iters: 0.00029, magic = 0.500
 > ### * <FOOTER>
 > ###
 > cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.68 0.04 0.908 0 0 
+Time elapsed:  0.548 0.032 0.745 0 0 
 > grDevices::dev.off()
 null device 
           1 

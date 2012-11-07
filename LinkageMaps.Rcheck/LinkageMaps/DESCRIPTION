@@ -10,4 +10,5 @@ Maintainer: Michael Sieger <michael.sieger@student.hswt.de>
 Description: Linkage Maps provide a way to display multivariate data. They are based on sammons-nonlinear mapping and connect the datapoints with lines depending on the real distance.
 URL: http://www.hswt.de/
 License: LGPL
-Built: R 2.14.1; ; 2012-11-06 12:27:44 UTC; unix
+Packaged: 2012-11-07 07:30:33 UTC; michi
+Built: R 2.14.1; ; 2012-11-07 07:31:13 UTC; unix
