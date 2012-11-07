@@ -4,9 +4,14 @@
 Displays a Linkage Map
 }
 \description{
-	A Linkage Map is a 2D scatter plot that displays the result of sammons nonlinear mapping. You define a number (possibly one) of ranges. Each point pair whose distance
-	is inside of the defined range is connected with a line. You can change the ranges dynamically
-	at runtime with sliders.
+	A Linkage Map is a 2D scatter plot that displays the result of Sammon's nonlinear mapping. 
+	You define a number of ranges (>= 1) for the distance values d[i,j]. 
+	Each point pair whose distance is inside of the defined range is connected with a line. 
+	You can change the ranges dynamically at runtime with sliders.
+
+	The ranges are defined by thresholds t[k](1<=k<=n) in the following way \cr
+	\bold{range[1]: d[i,j] <= t[1]}		\cr
+	\bold{range[k]: t[k-1] < d[i,j] <= t[k]}
 }
 \usage{
 linkmap(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
