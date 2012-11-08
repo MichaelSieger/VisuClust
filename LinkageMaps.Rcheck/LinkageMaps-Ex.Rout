@@ -1,8 +1,8 @@
 
-R version 2.14.1 (2011-12-22)
-Copyright (C) 2011 The R Foundation for Statistical Computing
+R version 2.15.1 (2012-06-22) -- "Roasted Marshmallows"
+Copyright (C) 2012 The R Foundation for Statistical Computing
 ISBN 3-900051-07-0
-Platform: i686-pc-linux-gnu (32-bit)
+Platform: i386-pc-mingw32/i386 (32-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,6 +21,7 @@ Type 'q()' to quit R.
 > pkgname <- "LinkageMaps"
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
+> options(pager = "console")
 > library('LinkageMaps')
 Loading required package: aplpack
 Loading required package: tcltk
@@ -69,7 +70,7 @@ stress after  20 iters: 0.00058, magic = 0.500
 > 
 > cleanEx()
 
-detaching ‘package:MASS’
+detaching 'package:MASS'
 
 > nameEx("linkmap")
 > ### * linkmap
@@ -102,7 +103,7 @@ stress after  20 iters: 0.00029, magic = 0.500
 > ### * <FOOTER>
 > ###
 > cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.548 0.032 0.745 0 0 
+Time elapsed:  0.58 0.27 0.99 NA NA 
 > grDevices::dev.off()
 null device 
           1 

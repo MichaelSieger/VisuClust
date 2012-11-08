@@ -1,0 +1,221 @@
+\nonstopmode{}
+\documentclass[a4paper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\usepackage[utf8,latin1]{inputenc}
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `LinkageMaps'}}
+\par\bigskip{\large \today}
+\end{center}
+\begin{description}
+\raggedright{}
+\item[Type]\AsIs{Package}
+\item[Title]\AsIs{Linkage Maps}
+\item[Version]\AsIs{0.1}
+\item[Date]\AsIs{2012-08-23}
+\item[Author]\AsIs{Michael Sieger}
+\item[Suggests]\AsIs{MASS}
+\item[Depends]\AsIs{aplpack, cluster}
+\item[Maintainer]\AsIs{Michael Sieger }\email{michael.sieger@student.hswt.de}\AsIs{}
+\item[Description]\AsIs{The Linkage Maps package provides functions to display multivariate data, based on sammons nonlinear mapping.}
+\item[URL]\AsIs{}\url{http://www.hswt.de/fh/fakultaet/gl/dozenten/ohmayer.html}\AsIs{}
+\item[License]\AsIs{LGPL}
+\end{description}
+\Rdcontents{\R{} topics documented:}
+\inputencoding{utf8}
+\HeaderA{fuzzyColorPlot}{Displays a fuzzy color plot}{fuzzyColorPlot}
+%
+\begin{Description}\relax
+A fuzzy color plot is a 2D scatterplot that displays the result of sammons nonlinear mapping. Additionally a fuzzy clustering is made.
+
+If the slider is on the first position, all cluster are displayed together. 
+The color/symbol indicates the nearest crisp clustering then. 
+The color intensity displays the probability of membership to the nearest cluster.
+
+You can select a single cluster too. The color intensity shows the probability of membership to the selected cluster.
+
+
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+	fuzzyColorPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), xlab="", ylab="", main="")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+
+\item[\code{X}] 
+A matrix with size (nPoints,nDimensions) that contains the untransformed input data.
+
+
+\item[\code{k}] 
+The number of clusters.
+
+
+\item[\code{Xs}] 
+A matrix with size (nPoints,2) that contains the projected points from sammons nonlinear mapping.
+
+
+\item[\code{clusterColors}] 
+A vector of size k that contains the colors for the clusters. You should only choose colors with a very high intensity.
+
+
+\item[\code{clusterSymbols}] 
+A vector of size k that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
+
+
+\item[\code{xlab}] 
+As described in \LinkA{plot}{plot}.
+
+\item[\code{ylab}] 
+As described in \LinkA{plot}{plot}.
+
+\item[\code{main}] 
+As described in \LinkA{plot}{plot}.
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Author}\relax
+Michael Sieger <michael.sieger@student.hswt.de>
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+
+# The example data
+data("Milch")
+
+library(cluster)
+library(MASS)
+
+D = dist(Milch[3:6])
+HK <- princomp(Milch[3:6], cor=FALSE, scores=TRUE)
+S <- sammon(D, HK$scores[,1:2])
+
+# A very basic example showing the default colors an symbols
+fuzzyColorPlot(Milch[3:6], 5, S$points)
+
+# Custom symbols 
+## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))
+
+# A Black-White Plot
+## Not run: fuzzyColorPlot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)
+
+
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{linkmap}{Displays a Linkage Map}{linkmap}
+%
+\begin{Description}\relax
+A Linkage Map is a 2D scatter plot that displays the result of sammons nonlinear mapping. You define a number (possibly one) of ranges. Each point pair whose distance
+is inside of the defined range is connected with a line. You can change the ranges dynamically
+at runtime with sliders.
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+linkmap(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
+						 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits = 2, xlab = "", ylab = "", main = "")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{X}] 
+A matrix with size (n,2) that contains the projected points from sammons nonlinear mapping.
+
+\item[\code{D}] 
+A distance matrix for the X argument. 
+
+\item[\code{linetypes}] 
+An array of line types. The size must match with line colors and line widths.
+The various line types are described in \LinkA{par}{par}
+
+\item[\code{linecolors}] 
+An array of colors. The size must match with line types and line widths.
+
+\item[\code{linewidths}] 
+An array of line widths. The size must match with line colors and line types.
+
+\item[\code{labels}] 
+A string-array with labels for the points
+
+\item[\code{cluster}] 
+A array containing cluster memberships of the points. The point
+membership will be indicated with different colors. The array size
+must match with the number of points.
+
+\item[\code{maxValue}] 
+The maximum value that can be adjusted with the sliders.
+
+\item[\code{legendDigits}] 
+The number of fractional digits to be displayed in the legend.
+
+\item[\code{xlab}] 
+As described in \LinkA{plot}{plot}.
+
+\item[\code{ylab}] 
+As described in \LinkA{plot}{plot}.
+
+\item[\code{main}] 
+As described in \LinkA{plot}{plot}.
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Author}\relax
+Michael Sieger <michael.sieger@student.hswt.de>
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+
+library(MASS)
+
+data("Milch3")
+
+D <- dist(Milch3[3:6])
+HK <- princomp(Milch3[3:6], cor=FALSE, scores=TRUE)
+S <- sammon(D, HK$scores[,1:2])
+k <- kmeans(D,center=5)
+linkmap(S$points, D, cluster=k$cluster,main="Milch")
+
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{Milch}{Milk components of mammals}{Milch}
+\keyword{datasets}{Milch}
+%
+\begin{Description}\relax
+This dataset contains the fat, protein, lactose and ash of different
+milks.
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+Milch
+\end{verbatim}
+\end{Usage}
+\inputencoding{utf8}
+\HeaderA{Milch3}{Milk components of mammals}{Milch3}
+\keyword{datasets}{Milch3}
+%
+\begin{Description}\relax
+A smaller version of the Milch dataset
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+Milch3
+\end{verbatim}
+\end{Usage}
+\printindex{}
+\end{document}

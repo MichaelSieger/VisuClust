@@ -1,20 +1,20 @@
-* using log directory ‘/home/michi/linkmapsWorkspace/LinkageMaps.Rcheck’
-* using R version 2.14.1 (2011-12-22)
-* using platform: i686-pc-linux-gnu (32-bit)
-* using session charset: UTF-8
-* checking for file ‘LinkageMaps/DESCRIPTION’ ... OK
+* using log directory 'C:/Users/michi/Documents/linkmapsWorkspace/LinkageMaps.Rcheck'
+* using R version 2.15.1 (2012-06-22)
+* using platform: i386-pc-mingw32 (32-bit)
+* using session charset: ISO8859-1
+* checking for file 'LinkageMaps/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package ‘LinkageMaps’ version ‘0.1’
+* this is package 'LinkageMaps' version '0.1'
+* checking CRAN incoming feasibility ... OK
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking whether package ‘LinkageMaps’ can be installed ... OK
+* checking whether package 'LinkageMaps' can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for portable file names ... OK
-* checking for sufficient/correct file permissions ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking index information ... OK
@@ -43,8 +43,12 @@ prepare_Rd: linkmap.Rd:64-66: Dropping empty section \seealso
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking contents of ‘data’ directory ... OK
+* checking contents of 'data' directory ... OK
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking examples ... OK
-* checking PDF version of manual ... OK
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+* checking PDF version of manual without hyperrefs or index ... ERROR
+Re-running with no redirection of stdout/stderr.
