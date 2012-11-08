@@ -1,2 +1,2 @@
 R CMD build LinkageMaps
-R CMD INSTALL --build LinkageMaps_0.1.tar.gz
+R CMD INSTALL --build LinkageMaps_0.2.tar.gz

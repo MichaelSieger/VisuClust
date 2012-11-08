@@ -15,7 +15,8 @@ Displays a fuzzy plot
 	
 }
 \usage{
-	fuzzy_plot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), xlab="", ylab="", main="")
+	fuzzy_plot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
+
 }
 
 \arguments{
@@ -38,6 +39,10 @@ Displays a fuzzy plot
 
   \item{clusterSymbols}{
 	A vector of size k that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
+}
+
+\item{labels}{
+A string-array with labels for the points
 }
 
   \item{xlab}{
