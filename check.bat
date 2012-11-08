@@ -1,0 +1,1 @@
+R CMD check --as-cran LinkageMaps_0.1.tar.gz
