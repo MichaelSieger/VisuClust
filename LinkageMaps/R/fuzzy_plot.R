@@ -1,18 +1,22 @@
-fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), xlab="", ylab="", main="")
+fuzzy_plot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
 {
 	
 	library(aplpack)
 	library(cluster)
 	
 	#define variables to prevent them beeing global visible
-	fcContext.n = 1
-	fcContext.clustering = 1
-	fcContext.clusterColorValues = 1
-	fcContext.symbols = 1
-	fcContext.colors = 1
+	fcContext.n = 0
+	fcContext.clustering = 0
+	fcContext.clusterColorValues = 0
+	fcContext.symbols = 0
+	fcContext.colors = 0
+	fcContext.xRange = 0
+	fcContext.yRange = 0
 	
 	fcContext.init <- function()
 	{
+		fcContext.xRange <<- max(Xs[,1])-min(Xs[,1])
+		fcContext.yRange <<- max(Xs[,2])-min(Xs[,2])
 		fcContext.clusterColorValues <<- col2rgb(clusterColors)
 		fcContext.clustering <<- fanny(X, k)
 		fcContext.n <<- dim(X)[1];
@@ -99,6 +103,11 @@ fuzzyColorPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=re
 		fcContext.updateColors()
 		par(xpd=T, ask=F)
 		plot(Xs, col=fcContext.colors, bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main)
+		if(length(labels) != 0)
+		{
+			relDist = 0.02
+			text(Xs[,1]+fcContext.xRange*relDist,Xs[,2]+fcContext.yRange*relDist,labels)
+		}
 	}
 	
 	fcContext.init()

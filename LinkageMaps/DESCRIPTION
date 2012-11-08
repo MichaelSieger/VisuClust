@@ -2,7 +2,7 @@ Package: LinkageMaps
 Type: Package
 Title: Linkage Maps
 Version: 0.1
-Date: 2012-08-23
+Date: 2012-11-08
 Author: Michael Sieger
 Suggests: MASS
 Maintainer: Michael Sieger <michael.sieger@student.hswt.de>

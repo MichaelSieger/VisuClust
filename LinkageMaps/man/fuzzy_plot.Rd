@@ -1,10 +1,10 @@
-\name{fuzzyColorPlot}
-\alias{fuzzyColorPlot}
+\name{fuzzy_plot}
+\alias{fuzzy_plot}
 \title{
-Displays a fuzzy color plot
+Displays a fuzzy plot
 }
 \description{
-	A fuzzy color plot is a 2D scatterplot that displays the result of sammons nonlinear mapping. Additionally a fuzzy clustering is made.
+	A fuzzy plot is a 2D scatterplot that displays the result of sammons nonlinear mapping. Additionally a fuzzy clustering is made.
 	
 	If the slider is on the first position, all cluster are displayed together. 
 	The color/symbol indicates the nearest crisp clustering then. 
@@ -15,7 +15,7 @@ Displays a fuzzy color plot
 	
 }
 \usage{
-	fuzzyColorPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), xlab="", ylab="", main="")
+	fuzzy_plot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), xlab="", ylab="", main="")
 }
 
 \arguments{
@@ -73,13 +73,13 @@ HK <- princomp(Milch[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 
 # A very basic example showing the default colors an symbols
-fuzzyColorPlot(Milch[3:6], 5, S$points)
+fuzzy_plot(Milch[3:6], 5, S$points)
 
 # Custom symbols 
-\dontrun{fuzzyColorPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
+\dontrun{fuzzy_plot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
 
 # A Black-White Plot
-\dontrun{fuzzyColorPlot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
+\dontrun{fuzzy_plot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
 
 
 }
