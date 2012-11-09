@@ -1,11 +1,11 @@
-Package: LinkageMaps
+Package: VisuClust
 Type: Package
-Title: Linkage Maps
-Version: 0.2
+Title: VisuClust
+Version: 0.3
 Date: 2012-11-08
 Author: Michael Sieger
 Suggests: MASS
 Maintainer: Michael Sieger <michael.sieger@student.hswt.de>
-Description: The Linkage Maps package provides functions to display multivariate data, based on sammons nonlinear mapping. 
+Description: The VisuClust package provides functions to display multivariate data, based on Sammon's nonlinear mapping. 
 URL: http://www.hswt.de/fh/fakultaet/gl/dozenten/ohmayer.html
 License: LGPL

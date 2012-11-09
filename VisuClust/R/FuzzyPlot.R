@@ -1,4 +1,4 @@
-fuzzy_plot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
+FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
 {
 	
 	library(aplpack)
@@ -28,7 +28,8 @@ fuzzy_plot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21
 		sl.maxs=(k+1),
 		sl.deltas=1, 
 		sl.defaults=1,
-		prompt=T)
+		prompt=T,
+		title="control window")
 		
 		fcContext.update()
 	}
@@ -97,6 +98,16 @@ fuzzy_plot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21
 		)
 	}
 	
+	fcContext.drawLegend <- function()
+	{
+		t <- rep(NA, k)
+		for(i in 1:k)
+		{
+			t[i] <- paste("Cluster", i)
+		}
+		legend("topleft", t, col=clusterColors, pch=clusterSymbols, pt.bg=clusterColors)
+	}
+	
 	fcContext.update <- function()
 	{
 		fcContext.updateSymbols();
@@ -108,6 +119,7 @@ fuzzy_plot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21
 			relDist = 0.02
 			text(Xs[,1]+fcContext.xRange*relDist,Xs[,2]+fcContext.yRange*relDist,labels)
 		}
+		fcContext.drawLegend()
 	}
 	
 	fcContext.init()

@@ -1,10 +1,10 @@
-\name{fuzzy_plot}
-\alias{fuzzy_plot}
+\name{FuzzyPlot}
+\alias{FuzzyPlot}
 \title{
 Displays a fuzzy plot
 }
 \description{
-	A fuzzy plot is a 2D scatterplot that displays the result of sammons nonlinear mapping. Additionally a fuzzy clustering is made.
+	A fuzzy plot is a 2D scatterplot that displays the result of Sammon's nonlinear mapping. Additionally a fuzzy clustering is made.
 	
 	If the slider is on the first position, all cluster are displayed together. 
 	The color/symbol indicates the nearest crisp clustering then. 
@@ -15,7 +15,7 @@ Displays a fuzzy plot
 	
 }
 \usage{
-	fuzzy_plot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
+	FuzzyPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
 
 }
 
@@ -30,7 +30,7 @@ Displays a fuzzy plot
 }
 
   \item{Xs}{
-    	A matrix with size (nPoints,2) that contains the projected points from sammons nonlinear mapping.
+    	A matrix with size (nPoints,2) that contains the projected points from Sammon's nonlinear mapping.
 }
 
   \item{clusterColors}{
@@ -78,13 +78,13 @@ HK <- princomp(Milch[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 
 # A very basic example showing the default colors an symbols
-fuzzy_plot(Milch[3:6], 5, S$points)
+FuzzyPlot(Milch[3:6], 5, S$points)
 
 # Custom symbols 
-\dontrun{fuzzy_plot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
+\dontrun{FuzzyPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
 
 # A Black-White Plot
-\dontrun{fuzzy_plot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
+\dontrun{FuzzyPlot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
 
 
 }

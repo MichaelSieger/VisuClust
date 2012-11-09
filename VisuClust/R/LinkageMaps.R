@@ -1,5 +1,5 @@
-link_map <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
-						 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits = 2, xlab = "", ylab = "", main = ""){	 
+LinkageMaps <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
+						 labels = NULL, cluster = NULL, maxValue=0.5, legendDigits = 2, xlab = "", ylab = "", main = ""){	 
 
 	library(aplpack)
 
@@ -45,7 +45,7 @@ link_map <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("
 	}
 
 	maps.createLegendString <- function(v1, v2){
-		paste(v1, "<= D[i,j] <", v2)
+		paste(v1, "<= d[i,j] <", v2)
 	}
 
 	maps.getSliderValues <- function(){
@@ -147,7 +147,7 @@ link_map <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("
 	maps.createSliderNames <- function(){
 		res = rep(NA, maps.nLines)
 		for(i in 1:maps.nLines){
-			res[i] = paste("T[", i, "]")
+			res[i] = paste("t[", i, "]")
 		}
 		res
 	}

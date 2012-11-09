@@ -1,1 +1,1 @@
-R CMD check --as-cran LinkageMaps_0.1.tar.gz
+R CMD check --as-cran VisuClust_0.3.tar.gz

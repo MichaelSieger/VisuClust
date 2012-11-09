@@ -1,3 +1,3 @@
 #!/bin/bash
-R CMD build LinkageMaps
+R CMD build VisuClust
 

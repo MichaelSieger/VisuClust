@@ -1,5 +1,5 @@
-\name{link_map}
-\alias{link_map}
+\name{LinkageMaps}
+\alias{LinkageMaps}
 \title{
 Displays a Linkage Map
 }
@@ -15,13 +15,13 @@ Displays a Linkage Map
 	\bold{range[k]: t[k-1] < d[i,j] <= t[k]}
 }
 \usage{
-link_map(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
-						 labels = NULL, cluster = NULL, maxValue=0.33, legendDigits = 2, xlab = "", ylab = "", main = "")
+LinkageMaps(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
+						 labels = NULL, cluster = NULL, maxValue=0.5, legendDigits = 2, xlab = "", ylab = "", main = "")
 }
 
 \arguments{
   \item{X}{
-    A matrix with size (n,2) that contains the projected points from sammons nonlinear mapping.
+    A matrix with size (n,2) that contains the projected points from Sammon's nonlinear mapping.
 }
   \item{D}{
     A distance matrix for the X argument. 
@@ -80,6 +80,6 @@ D <- dist(Milch3[3:6])
 HK <- princomp(Milch3[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 k <- kmeans(D,center=5)
-link_map(S$points, D, cluster=k$cluster,main="Milch")
+LinkageMaps(S$points, D, cluster=k$cluster,main="Milch")
 
 }
