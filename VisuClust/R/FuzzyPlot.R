@@ -1,3 +1,25 @@
+#Author: Michael Sieger <michael.sieger@student.hswt.de>
+#Project responsible: Dr. Georg Ohmayer <georg.ohmayer@hswt.de>
+#Copyrights: Hochschule Weihenstephan-Triesdorf
+
+#This file is part of the Linkage Maps package.
+
+#The VisuClust package is free software: you can redistribute it and/or modify
+#it under the terms of the GNU Lesser General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#The VisuClust package is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU Lesser General Public License for more details.
+
+#You should have received a copy of the GNU Lesser General Public License
+#along with the VisuClust package.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+
 FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
 {
 	
@@ -23,7 +45,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		
 		
 		slider(fcContext.sliderCallback, 
-		sl.names="Cluster",
+		sl.names=fcContext.createSliderName(),
 		sl.mins=1,
 		sl.maxs=(k+1),
 		sl.deltas=1, 
@@ -32,6 +54,11 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		title="control window")
 		
 		fcContext.update()
+	}
+	
+	fcContext.createSliderName <- function()
+	{
+		paste("1-", k, " = cluster, ", k+1, " = all")
 	}
 	
 	fcContext.sliderCallback <- function(...)
@@ -47,19 +74,19 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 	fcContext.updateColors <- function()
 	{
 		v <- fcContext.getSliderValue();
-		if(v == 1)
+		if(v == (k+1))
 		{
 			fcContext.updateColorsAllCluster()
 		}
 		else
 		{
-			fcContext.updateColorsSingleCluster(v-1)
+			fcContext.updateColorsSingleCluster(v)
 		}
 	}
 	
 	fcContext.updateSymbols <- function()
 	{
-		if(fcContext.getSliderValue() == 1)
+		if(fcContext.getSliderValue() == (k+1))
 		{
 			fcContext.symbols <<- clusterSymbols[fcContext.clustering$clustering]
 		}
@@ -112,6 +139,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 	{
 		fcContext.updateSymbols();
 		fcContext.updateColors()
+		dev.hold()
 		par(xpd=T, ask=F)
 		plot(Xs, col=fcContext.colors, bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main)
 		if(length(labels) != 0)
@@ -120,6 +148,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 			text(Xs[,1]+fcContext.xRange*relDist,Xs[,2]+fcContext.yRange*relDist,labels)
 		}
 		fcContext.drawLegend()
+		dev.flush()
 	}
 	
 	fcContext.init()

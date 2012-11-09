@@ -1,3 +1,25 @@
+#Author: Michael Sieger <michael.sieger@student.hswt.de>
+#Project responsible: Dr. Georg Ohmayer <georg.ohmayer@hswt.de>
+#Copyrights: Hochschule Weihenstephan-Triesdorf
+
+#This file is part of the Linkage Maps package.
+
+#The VisuClust package is free software: you can redistribute it and/or modify
+#it under the terms of the GNU Lesser General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#The VisuClust package is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU Lesser General Public License for more details.
+
+#You should have received a copy of the GNU Lesser General Public License
+#along with the VisuClust package.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+
 LinkageMaps <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
 						 labels = NULL, cluster = NULL, maxValue=0.5, legendDigits = 2, xlab = "", ylab = "", main = ""){	 
 
@@ -102,7 +124,7 @@ LinkageMaps <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=
 
 	maps.drawLegend <- function(){
 		t <- rep(NA, maps.nLines)
-		t[1] = paste("D[i,j] <= ", maps.s[1])
+		t[1] = paste("d[i,j] <= ", maps.s[1])
 		for(i in 2:maps.nLines){
 			t[i] = maps.createLegendString(maps.s[i-1], maps.s[i])
 		}
