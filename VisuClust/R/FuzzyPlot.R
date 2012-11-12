@@ -20,7 +20,8 @@
 
 
 
-FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
+FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="",
+			enableLegend=TRUE)
 {
 	
 	library(aplpack)
@@ -120,9 +121,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		{
 			strongestMemberships[i] <- max(fcContext.clustering$membership[i,])
 		}
-		fcContext.colors <<- fcContext.rgbList2color(fcContext.clusterColorValues[,fcContext.clustering$clustering], 
-		strongestMemberships
-		)
+		fcContext.colors <<- fcContext.rgbList2color(fcContext.clusterColorValues[,fcContext.clustering$clustering], strongestMemberships)
 	}
 	
 	fcContext.drawLegend <- function()
@@ -141,13 +140,16 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		fcContext.updateColors()
 		dev.hold()
 		par(xpd=T, ask=F)
-		plot(Xs, col=fcContext.colors, bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main)
+		plot(Xs, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main)
 		if(length(labels) != 0)
 		{
 			relDist = 0.02
 			text(Xs[,1]+fcContext.xRange*relDist,Xs[,2]+fcContext.yRange*relDist,labels)
 		}
-		fcContext.drawLegend()
+		if(enableLegend)
+		{
+			fcContext.drawLegend()
+		}
 		dev.flush()
 	}
 	

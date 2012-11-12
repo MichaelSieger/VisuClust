@@ -15,7 +15,8 @@ Displays a fuzzy plot
 	
 }
 \usage{
-	FuzzyPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="")
+	FuzzyPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="",
+			enableLegend=TRUE)
 
 }
 
@@ -53,6 +54,9 @@ A string-array with labels for the points
   }
   \item{main}{
 	As described in \link{plot}.
+  }
+  \item{enableLegend}{
+	Switch legend on/off	
   }
 }
 \references{

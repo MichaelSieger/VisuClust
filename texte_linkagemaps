@@ -1,0 +1,49 @@
+Beschreibung für linkmap:
+
+A Linkage Map is a 2D scatter plot that displays the result of Sammon's nonlinear mapping. You define a number of ranges (>= 1) for the distance values d[i,j]. Each point pair whose distance is inside of the defined range is connected with a line. You can change the ranges dynamically at runtime with sliders.
+
+The ranges are defined by thresholds t[k](1<=k<=n) in the following way 
+range[1]: d[i,j] <= t[1]	
+range[i]: t[k-1] < d[i,j] <= t[k]
+
+
+
+
+Beschreibung für fuzzyColorPlot:
+
+A fuzzy color plot is a 2D scatterplot that displays the result of sammons nonlinear mapping. Additionally a fuzzy clustering is made.
+
+If the slider is on the first position, all cluster are displayed together. The color/symbol indicates the nearest crisp clustering then. The color intensity displays the probability of membership to the nearest cluster.
+
+You can select a single cluster too. The color intensity shows the probability of membership to the selected cluster.
+
+
+
+
+Kurzbeschreibung für das packet als ganzes:
+
+The Linkage Maps package provides functions to display multivariate data, based on sammons nonlinear mapping. 
+
+
+
+Source-File header:
+
+
+#Author: Michael Sieger <michael.sieger@student.hswt.de>
+#Project responsible: Dr. Georg Ohmayer <georg.ohmayer@hswt.de>
+#Copyrights: Hochschule Weihenstephan-Triesdorf
+
+#This file is part of the Linkage Maps package.
+
+#The Linkage Maps package is free software: you can redistribute it and/or modify
+#it under the terms of the GNU Lesser General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#The Linkage Maps package is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU Lesser General Public License for more details.
+
+#You should have received a copy of the GNU Lesser General Public License
+#along with the Linkage Maps package.  If not, see <http://www.gnu.org/licenses/>.

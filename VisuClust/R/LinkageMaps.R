@@ -200,7 +200,7 @@ LinkageMaps <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=
 				sl.names=maps.createSliderNames(),
 				sl.mins=rep(min,maps.nLines*2),
 				sl.maxs=rep(max,maps.nLines),
-				sl.deltas=rep((max-min)/300,maps.nLines), 
+				sl.deltas=rep(0.01,maps.nLines), 
 				sl.defaults=rep(0,maps.nLines),
 				prompt=T,	
 				title="Thresholds")
