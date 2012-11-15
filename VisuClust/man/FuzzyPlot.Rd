@@ -76,17 +76,18 @@ Michael Sieger <michael.sieger@student.hswt.de>
 \examples{
 
 # The example data
-data("Milch")
+data("Milch3")
 
 library(cluster)
 library(MASS)
 
-D = dist(Milch[3:6])
-HK <- princomp(Milch[3:6], cor=FALSE, scores=TRUE)
+data <-Milch3[3:6]
+D <- dist(data)
+HK <- princomp(data, cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 
 # A very basic example showing the default colors an symbols
-FuzzyPlot(Milch[3:6], 5, S$points)
+FuzzyPlot(data, 5, S$points, labels=Milch3[,2])
 
 # Custom symbols 
 \dontrun{FuzzyPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}

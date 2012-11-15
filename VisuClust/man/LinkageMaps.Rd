@@ -80,6 +80,6 @@ D <- dist(Milch3[3:6])
 HK <- princomp(Milch3[3:6], cor=FALSE, scores=TRUE)
 S <- sammon(D, HK$scores[,1:2])
 k <- kmeans(D,center=5)
-LinkageMaps(S$points, D, cluster=k$cluster,main="Milch")
+LinkageMaps(S$points, D, cluster=k$cluster)
 
 }
