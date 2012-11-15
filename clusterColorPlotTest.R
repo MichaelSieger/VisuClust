@@ -5,6 +5,6 @@ MD <- read.table("~/linkmapsWorkspace/Milch3.Dat",dec=",",header=TRUE)
 HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)
 D <- dist(MD[3:6])
 S <- sammon(D, HK$scores[,1:2])
-FuzzyPlot(MD[3:6], 5, S$points, labels=MD[,1])
+FuzzyPlot(MD[3:6], 5, S$points, labels=MD[,2])
 
 

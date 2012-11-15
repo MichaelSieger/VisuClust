@@ -1,6 +1,6 @@
 library(MASS)
 
-source("~/linkmapsWorkspace/VisuClust/R/linkmaps.R")
+source("~/linkmapsWorkspace/VisuClust/R/LinkageMaps.R")
 MD <- read.table("~/linkmapsWorkspace/Milch.Dat",dec=",",header=TRUE)
 D <- dist(MD[3:6])
 HK <- princomp(MD[3:6], cor=FALSE, scores=TRUE)

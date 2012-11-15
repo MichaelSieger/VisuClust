@@ -10,54 +10,58 @@ Displays a fuzzy plot
 	The color/symbol indicates the nearest crisp clustering then. 
 	The color intensity displays the probability of membership to the nearest cluster.
 	
-	You can select a single cluster too. The color intensity shows the probability of membership to the selected cluster.
+	You can select a single cluster too. The color intensity and the label size (if enabled) shows the probability of membership to the selected cluster.
 
 	
 }
 \usage{
-	FuzzyPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="",
+	FuzzyPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, labelsize=c(0.6, 1.0), xlab="", ylab="", main="",
 			enableLegend=TRUE)
 
 }
 
 \arguments{
 
-  \item{X}{
+\item{X}{
 	A matrix with size (nPoints,nDimensions) that contains the untransformed input data.
 }
 
-  \item{k}{
+\item{k}{
     	The number of clusters.
 }
 
-  \item{Xs}{
+\item{Xs}{
     	A matrix with size (nPoints,2) that contains the projected points from Sammon's nonlinear mapping.
 }
 
-  \item{clusterColors}{
+\item{clusterColors}{
 	A vector of size k that contains the colors for the clusters. You should only choose colors with a very high intensity.
 }
 
-  \item{clusterSymbols}{
+\item{clusterSymbols}{
 	A vector of size k that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
 }
 
 \item{labels}{
-A string-array with labels for the points
+	A string-array with labels for the points
 }
 
-  \item{xlab}{
+\item{labelsize}{
+	The size of the labels in the form c(min, max)
+}
+
+\item{xlab}{
 	As described in \link{plot}.
-  }
-  \item{ylab}{
+}
+\item{ylab}{
 	As described in \link{plot}.
-  }
-  \item{main}{
+}
+\item{main}{
 	As described in \link{plot}.
-  }
-  \item{enableLegend}{
+}
+\item{enableLegend}{
 	Switch legend on/off	
-  }
+}
 }
 \references{
 

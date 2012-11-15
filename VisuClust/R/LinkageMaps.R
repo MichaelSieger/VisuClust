@@ -128,9 +128,12 @@ LinkageMaps <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=
 		for(i in 2:maps.nLines){
 			t[i] = maps.createLegendString(maps.s[i-1], maps.s[i])
 		}
-		legend("topleft",  
-				t, 
-				lwd=linewidths, lty=linetypes, col=linecolors)
+		#legend("topleft",  
+		#		t, 
+		#		lwd=linewidths, lty=linetypes, col=linecolors)
+		psize <- par("usr")
+		lsize <- legend(0,0,t, horiz=TRUE, plot=FALSE)
+		legend(psize[1], psize[4]+lsize$rect$h, t, horiz=TRUE, lwd=linewidths, lty=linetypes, col=linecolors)
 	}
 
 	maps.draw <- function(){

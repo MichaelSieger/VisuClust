@@ -144,7 +144,9 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		{
 			t[i] <- paste("Cluster", i)
 		}
-		legend("topleft", t, col=clusterColors, pch=clusterSymbols, pt.bg=clusterColors)
+		psize <- par("usr")
+		lsize <- legend(0,0,t, horiz=TRUE, plot=FALSE)
+		legend(psize[1], psize[4]+lsize$rect$h, t, horiz=TRUE, col=clusterColors, pch=clusterSymbols, pt.bg=clusterColors)
 	}
 	
 	fcContext.drawLabels <- function()
@@ -152,7 +154,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		probrange <- labelsize[2]-labelsize[1]
 		for(i in 1:fcContext.n)
 		{
-			text(Xs[i,1], Xs[i, 2], labels=labels[i], adj=c(1.3, 1.3), 
+			text(Xs[i,1], Xs[i, 2], labels=labels[i], adj=c(1.1, 1.1), 
 				cex=(probrange*fcContext.probabilitys[i] + labelsize[1])
 			)
 		}
