@@ -20,7 +20,7 @@
 
 
 
-FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, xlab="", ylab="", main="",
+FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, labelsize=c(0.6, 1.0), xlab="", ylab="", main="",
 			enableLegend=TRUE)
 {
 	
@@ -35,6 +35,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 	fcContext.colors = 0
 	fcContext.xRange = 0
 	fcContext.yRange = 0
+	fcContext.probabilitys = 0
 	
 	fcContext.init <- function()
 	{
@@ -111,17 +112,29 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 	
 	fcContext.updateColorsSingleCluster <- function(selCluster)
 	{
-		fcContext.colors <<- fcContext.rgbList2color(fcContext.clusterColorValues[,rep(selCluster, fcContext.n)], fcContext.clustering$membership[,selCluster])
+		fcContext.colors <<- fcContext.rgbList2color(fcContext.clusterColorValues[,rep(selCluster, fcContext.n)], fcContext.probabilitys)
 	}
 	
 	fcContext.updateColorsAllCluster <- function()
 	{
-		strongestMemberships <- rep(NA, fcContext.n)
-		for(i in 1:fcContext.n)
-		{
-			strongestMemberships[i] <- max(fcContext.clustering$membership[i,])
+		fcContext.colors <<- fcContext.rgbList2color(fcContext.clusterColorValues[,fcContext.clustering$clustering], fcContext.probabilitys)
+	}
+	
+	fcContext.updateProbability <- function()
+	{
+		sel <- fcContext.getSliderValue()
+		if(sel == k+1)
+		{			
+			fcContext.probabilitys <<- rep(NA, fcContext.n)
+			for(i in 1:fcContext.n)
+			{
+				fcContext.probabilitys[i] <<- max(fcContext.clustering$membership[i,])
+			}
 		}
-		fcContext.colors <<- fcContext.rgbList2color(fcContext.clusterColorValues[,fcContext.clustering$clustering], strongestMemberships)
+		else
+		{
+			fcContext.probabilitys <<- fcContext.clustering$membership[,sel]
+		}
 	}
 	
 	fcContext.drawLegend <- function()
@@ -134,17 +147,28 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		legend("topleft", t, col=clusterColors, pch=clusterSymbols, pt.bg=clusterColors)
 	}
 	
+	fcContext.drawLabels <- function()
+	{
+		probrange <- labelsize[2]-labelsize[1]
+		for(i in 1:fcContext.n)
+		{
+			text(Xs[i,1], Xs[i, 2], labels=labels[i], adj=c(1.3, 1.3), 
+				cex=(probrange*fcContext.probabilitys[i] + labelsize[1])
+			)
+		}
+	}
+	
 	fcContext.update <- function()
 	{
-		fcContext.updateSymbols();
+		fcContext.updateProbability()
+		fcContext.updateSymbols()
 		fcContext.updateColors()
 		dev.hold()
 		par(xpd=T, ask=F)
 		plot(Xs, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main)
 		if(length(labels) != 0)
 		{
-			relDist = 0.02
-			text(Xs[,1]+fcContext.xRange*relDist,Xs[,2]+fcContext.yRange*relDist,labels)
+			fcContext.drawLabels()
 		}
 		if(enableLegend)
 		{
