@@ -1,3 +1,4 @@
+\title{VisuClust}
 \name{VisuClust}
 \alias{VisuClust}
 \docType{package}

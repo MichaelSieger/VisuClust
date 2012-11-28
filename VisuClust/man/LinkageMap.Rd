@@ -81,6 +81,6 @@ MD <- scale(MilchSmall[3:6])
 D <- dist(MD)
 S <- sammon(D)
 k <- kmeans(D,center=5)
-LinkageMap(S$points, D, cluster=k$cluster)
+LinkageMap(S$points, D, cluster=k$cluster, labels=MilchSmall[,2])
 
 }
