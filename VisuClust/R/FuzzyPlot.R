@@ -21,7 +21,7 @@
 
 
 FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, labelsize=c(0.6, 1.0), xlab="", ylab="", main="",
-			enableLegend=TRUE)
+			enableLegend=TRUE, cex=1.4)
 {
 	
 	library(aplpack)
@@ -146,7 +146,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		}
 		psize <- par("usr")
 		lsize <- legend(0,0,t, horiz=TRUE, plot=FALSE)
-		legend(psize[1], psize[4]+lsize$rect$h, t, horiz=TRUE, col=clusterColors, pch=clusterSymbols, pt.bg=clusterColors)
+		legend(psize[1], psize[4]+lsize$rect$h, t, horiz=TRUE, col="black", pch=clusterSymbols, pt.bg=clusterColors)
 	}
 	
 	fcContext.drawLabels <- function()
@@ -167,7 +167,7 @@ FuzzyPlot <- function(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,
 		fcContext.updateColors()
 		dev.hold()
 		par(xpd=T, ask=F)
-		plot(Xs, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main)
+		plot(Xs, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main, cex=cex)
 		if(length(labels) != 0)
 		{
 			fcContext.drawLabels()

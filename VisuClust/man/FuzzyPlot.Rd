@@ -36,18 +36,20 @@ Displays a fuzzy plot
 
 \item{clusterColors}{
 	A vector of size k that contains the colors for the clusters. You should only choose colors with a very high intensity.
+	see \link{colors}
 }
 
 \item{clusterSymbols}{
 	A vector of size k that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
+	see \link{par}
 }
 
 \item{labels}{
-	A string-array with labels for the points
+	A string-array with labels for the points.
 }
 
 \item{labelsize}{
-	The size of the labels in the form c(min, max)
+	The size of the labels in the form c(min, max).
 }
 
 \item{xlab}{
@@ -87,13 +89,13 @@ D <- dist(data)
 S <- sammon(D)
 
 # A very basic example showing the default colors an symbols
-FuzzyPlot(data, 5, S$points, labels=MilchSmall[,2])
+FuzzyPlot(data, 6, S$points, labels=MilchSmall[,2], clusterColors=c("red", "green", "magenta", "yellow", "blue", "black"))
 
 # Custom symbols 
-\dontrun{FuzzyPlot(data, 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
+\dontrun{FuzzyPlot(data, 6, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
 
 # A Black-White Plot
-\dontrun{FuzzyPlot(data, 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
+\dontrun{FuzzyPlot(data, 6, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
 
 
 }

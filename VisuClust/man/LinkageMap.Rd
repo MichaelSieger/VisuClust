@@ -24,52 +24,45 @@ LinkageMap(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","gree
     A matrix with size (n,2) that contains the projected points from Sammon's nonlinear mapping.
 }
   \item{D}{
-    A distance matrix for the X argument. 
+    A distance matrix for the X argument. \link{dist}
 }
   \item{linetypes}{
     An array of line types. The size must match with line colors and line widths.
     The various line types are described in \link{par}
 }
   \item{linecolors}{
-    An array of colors. The size must match with line types and line widths.
+    An array of colors. The size must match with line types and line widths. see \link{colors}
 }
   \item{linewidths}{
-    An array of line widths. The size must match with line colors and line types.
+    An array of line widths. The size must match with line colors and line types. see \link{par}
 }
-  \item{labels}{
-	A string-array with labels for the points
-  }
-  \item{cluster}{
+\item{labels}{
+	A string-array with labels for the points.
+}
+\item{cluster}{
 	A array containing cluster memberships of the points. The point
 	membership will be indicated with different colors. The array size
 	must match with the number of points.
-  }
-  \item{maxValue}{
-	The maximum value that can be adjusted with the sliders.
-  }
-  \item{legendDigits}{
-    The number of fractional digits to be displayed in the legend.
-  }
-  \item{xlab}{
-	As described in \link{plot}.
-  }
-  \item{ylab}{
-	As described in \link{plot}.
-  }
-  \item{main}{
-	As described in \link{plot}.
-  }
 }
-\references{
-
+\item{maxValue}{
+	The maximum value that can be adjusted with the sliders.
+}
+\item{legendDigits}{
+	The number of fractional digits to be displayed in the legend.
+}
+\item{xlab}{
+	As described in \link{plot}.
+}
+\item{ylab}{
+	As described in \link{plot}.
+}
+\item{main}{
+	As described in \link{plot}.
+}
 }
 \author{
 Michael Sieger <michael.sieger@student.hswt.de>
 Georg Ohmayer <georg.ohmayer@hswt.de>
-}
-
-\seealso{
-
 }
 \examples{
 
