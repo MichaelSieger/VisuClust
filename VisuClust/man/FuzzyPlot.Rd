@@ -1,10 +1,10 @@
 \name{FuzzyPlot}
 \alias{FuzzyPlot}
 \title{
-Displays a fuzzy plot
+Displays a Fuzzy Plot
 }
 \description{
-	A fuzzy plot is a 2D scatterplot that displays the result of Sammon's nonlinear mapping. Additionally a fuzzy clustering is made.
+	A Fuzzy Plot is a 2D scatterplot that displays the result of Sammon's nonlinear mapping. Additionally a fuzzy clustering is made.
 	
 	If the slider is on the first position, all cluster are displayed together. 
 	The color/symbol indicates the nearest crisp clustering then. 
@@ -15,32 +15,28 @@ Displays a fuzzy plot
 	
 }
 \usage{
-	FuzzyPlot(X, k, Xs, clusterColors=rainbow(k), clusterSymbols=rep(21,k), labels=NULL, labelsize=c(0.6, 1.0), xlab="", ylab="", main="",
-			enableLegend=TRUE)
-
+FuzzyPlot(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=rep(21,dim(probs)[2]), labels=NULL, labelsize=c(0.6, 1.0), xlab="", ylab="", main="",
+			enableLegend=TRUE, cex=1.4)
 }
 
 \arguments{
 
-\item{X}{
-	A matrix with size (nPoints,nDimensions) that contains the untransformed input data.
-}
-
-\item{k}{
-    	The number of clusters.
-}
-
 \item{Xs}{
-    	A matrix with size (nPoints,2) that contains the projected points from Sammon's nonlinear mapping.
+    	A matrix with size (nPoints,2) that contains the projected points from Sammon's Nonlinear Mapping.
+}
+
+\item{probs}{
+	A matrix with size (nPoints, nClusters) that contains the probability of membership for each cluster.
+	See the membership argument of \link{fanny}
 }
 
 \item{clusterColors}{
-	A vector of size k that contains the colors for the clusters. You should only choose colors with a very high intensity.
+	A vector of size nClusters that contains the colors for the clusters. You should only choose colors with a very high intensity.
 	see \link{colors}
 }
 
 \item{clusterSymbols}{
-	A vector of size k that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
+	A vector of size nClusters that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
 	see \link{par}
 }
 
@@ -62,7 +58,7 @@ Displays a fuzzy plot
 	As described in \link{plot}.
 }
 \item{enableLegend}{
-	Switch legend on/off	
+	Switch legend on/off.
 }
 }
 \references{
