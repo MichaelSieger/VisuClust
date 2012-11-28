@@ -82,19 +82,18 @@ data("MilchSmall")
 library(cluster)
 library(MASS)
 
-data <-Milch3[3:6]
+data <- scale(MilchSmall[3:6])
 D <- dist(data)
-HK <- princomp(data, cor=FALSE, scores=TRUE)
-S <- sammon(D, HK$scores[,1:2])
+S <- sammon(D)
 
 # A very basic example showing the default colors an symbols
-FuzzyPlot(data, 5, S$points, labels=Milch3[,2])
+FuzzyPlot(data, 5, S$points, labels=MilchMilchSmall[,2])
 
 # Custom symbols 
-\dontrun{FuzzyPlot(Milch[3:6], 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
+\dontrun{FuzzyPlot(data, 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
 
 # A Black-White Plot
-\dontrun{FuzzyPlot(Milch[3:6], 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
+\dontrun{FuzzyPlot(data, 5, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
 
 
 }
