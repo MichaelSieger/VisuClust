@@ -68,6 +68,7 @@ Displays a fuzzy plot
 }
 \author{
 Michael Sieger <michael.sieger@student.hswt.de>
+Georg Ohmayer <georg.ohmayer@hswt.de>
 }
 
 \seealso{
@@ -76,7 +77,7 @@ Michael Sieger <michael.sieger@student.hswt.de>
 \examples{
 
 # The example data
-data("Milch3")
+data("MilchSmall")
 
 library(cluster)
 library(MASS)

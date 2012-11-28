@@ -1,5 +1,5 @@
-\name{LinkageMaps}
-\alias{LinkageMaps}
+\name{LinkageMap}
+\alias{LinkageMap}
 \title{
 Displays a Linkage Map
 }
@@ -15,7 +15,7 @@ Displays a Linkage Map
 	\bold{range[k]: t[k-1] < d[i,j] <= t[k]}
 }
 \usage{
-LinkageMaps(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
+LinkageMap(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
 						 labels = NULL, cluster = NULL, maxValue=0.5, legendDigits = 2, xlab = "", ylab = "", main = "")
 }
 
@@ -65,6 +65,7 @@ LinkageMaps(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","gre
 }
 \author{
 Michael Sieger <michael.sieger@student.hswt.de>
+Georg Ohmayer <georg.ohmayer@hswt.de>
 }
 
 \seealso{
@@ -74,12 +75,12 @@ Michael Sieger <michael.sieger@student.hswt.de>
 
 library(MASS)
 
-data("Milch3")
+data("MilchSmall")
+MD <- scale(MilchSmall[3:6])
 
-D <- dist(Milch3[3:6])
-HK <- princomp(Milch3[3:6], cor=FALSE, scores=TRUE)
-S <- sammon(D, HK$scores[,1:2])
+D <- dist(MD)
+S <- sammon(D)
 k <- kmeans(D,center=5)
-LinkageMaps(S$points, D, cluster=k$cluster)
+LinkageMap(S$points, D, cluster=k$cluster)
 
 }
