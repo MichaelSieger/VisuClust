@@ -4,9 +4,10 @@
 Displays a Fuzzy Plot
 }
 \description{
-	A Fuzzy Plot is a 2D scatterplot that displays the result of Sammon's nonlinear mapping. Additionally a fuzzy clustering is made.
+	A Fuzzy Plot is a 2D Scatter Plot that displays the result of Sammon's Nonlinear Mapping together with
+	a fuzzy clustering.
 	
-	If the slider is on the first position, all cluster are displayed together. 
+	If the slider is on the last position, all cluster are displayed together. 
 	The color/symbol indicates the nearest crisp clustering then. 
 	The color intensity displays the probability of membership to the nearest cluster.
 	
@@ -32,12 +33,12 @@ FuzzyPlot(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=rep(21
 
 \item{clusterColors}{
 	A vector of size nClusters that contains the colors for the clusters. You should only choose colors with a very high intensity.
-	see \link{colors}
+	See \link{colors}
 }
 
 \item{clusterSymbols}{
 	A vector of size nClusters that contains the symbols for the clusters. Not all symbols can be filled. If you want this you should use the symbols 15-20.
-	see \link{par}
+	See \link{points}
 }
 
 \item{labels}{
@@ -60,12 +61,16 @@ FuzzyPlot(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=rep(21
 \item{enableLegend}{
 	Switch legend on/off.
 }
+\item{cex}{
+	As described in \link{par}
+}
+
 }
 \references{
 
 }
 \author{
-Michael Sieger <michael.sieger@student.hswt.de>
+Michael Sieger <michael.sieger@student.hswt.de>	\cr
 Georg Ohmayer <georg.ohmayer@hswt.de>
 }
 
@@ -83,15 +88,9 @@ library(MASS)
 data <- scale(MilchSmall[3:6])
 D <- dist(data)
 S <- sammon(D)
+F <- fanny(data, 6)
 
-# A very basic example showing the default colors an symbols
-FuzzyPlot(data, 6, S$points, labels=MilchSmall[,2], clusterColors=c("red", "green", "magenta", "yellow", "blue", "black"))
-
-# Custom symbols 
-\dontrun{FuzzyPlot(data, 6, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
-
-# A Black-White Plot
-\dontrun{FuzzyPlot(data, 6, S$points, clusterColors=rep("black", 5), clusterSymbols=15:19)}
+FuzzyPlot(S$points, F$membership, labels=MilchSmall[,2], clusterColors=c("red", "green", "magenta", "yellow", "blue", "black"))
 
 
 }

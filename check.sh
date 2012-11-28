@@ -1,1 +1,1 @@
-R CMD check --as-cran VisuClust_0.3.tar.gz
+R CMD check VisuClust_0.5.tar.gz

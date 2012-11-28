@@ -36,6 +36,7 @@ FuzzyPlot <- function(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSy
 	fcContext.yRange = 0
 	fcContext.k = 0
 	fcContext.crispClustering = 0
+	fcContext.probabilitys = 0
 	
 	fcContext.init <- function()
 	{
@@ -53,7 +54,7 @@ FuzzyPlot <- function(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSy
 		sl.maxs=(fcContext.k+1),
 		sl.deltas=1, 
 		sl.defaults=1,
-		prompt=T,
+		prompt=TRUE,
 		title="control window")
 		
 		fcContext.update()

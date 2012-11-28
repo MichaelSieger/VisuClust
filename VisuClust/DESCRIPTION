@@ -1,7 +1,7 @@
 Package: VisuClust
 Type: Package
 Title: VisuClust
-Version: 0.3
+Version: 0.5
 Date: 2012-11-08
 Author: Michael Sieger
 Suggests: MASS
