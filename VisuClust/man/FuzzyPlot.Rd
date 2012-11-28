@@ -87,7 +87,7 @@ D <- dist(data)
 S <- sammon(D)
 
 # A very basic example showing the default colors an symbols
-FuzzyPlot(data, 5, S$points, labels=MilchMilchSmall[,2])
+FuzzyPlot(data, 5, S$points, labels=MilchSmall[,2])
 
 # Custom symbols 
 \dontrun{FuzzyPlot(data, 5, S$points, clusterSymbols=c("a","b", "c","d", "e"))}
