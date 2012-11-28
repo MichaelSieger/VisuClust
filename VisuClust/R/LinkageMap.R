@@ -139,7 +139,7 @@ LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c
 	maps.draw <- function(){
 		maps.updateGUI()
 		dev.hold()
-		par(xpd=T, ask=F)
+		par(xpd=TRUE, ask=FALSE)
 		plot(X, pch=21,col=maps.circleCols[cluster], bg = maps.clusterCols[cluster], xlab=xlab, ylab=ylab, main=main)
 		for(j in 1:maps.n){		#foreach point
 			for(i in 1:j){		#foreach point (only one direction)
