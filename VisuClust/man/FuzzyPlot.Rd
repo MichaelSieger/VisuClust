@@ -6,7 +6,7 @@ Displays a Fuzzy Plot
 \description{
 A Fuzzy Plot is a 2D Scatter Plot that displays the result of Sammon's Nonlinear Mapping together with a fuzzy 
 clustering. The values u[i,k] (i=1,...,nPoints; k=1,...,nPoints), which states the membership of the i.th 
-observation for the cluster k, can be computed for example with \link{fanny} from the package \link{cluster}.
+observation for the cluster k, can be computed for example with \link{fanny} from the package cluster.
 
 If the slider is on the last position, all cluster are displayed together. The color and the symbol indicates the 
 nearest crisp clustering then (max u[i,k], k=1,...,nClusters). The color intensity displays the probability of 
