@@ -3,7 +3,10 @@ Type: Package
 Title: VisuClust
 Version: 1.0
 Date: 2012-11-08
-Author: Michael Sieger
+Authors@R: c(person("Michael", "Sieger", role=c("cre","aut"), email="michael.sieger@student.hswt.de"), 
+		person("Georg", "Ohmayer", role=c("aut", "ths"), email="georg.ohmayer@hswt.de"),
+		person("Hochschule Weihenstephan-Triesdorf", role=("cph")))
+Author: Michael Sieger and Dr. Georg Ohmayer
 Suggests: MASS, cluster
 Depends: aplpack
 Maintainer: Michael Sieger <michael.sieger@student.hswt.de>
