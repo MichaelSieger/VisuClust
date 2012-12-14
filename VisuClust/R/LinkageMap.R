@@ -20,22 +20,24 @@
 
 
 
-LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c("red","green"), linewidths=c(1,1),
-						 labels = NULL, cluster = NULL, maxValue=0.5, legendDigits = 2, xlab = "", ylab = "", main = ""){	 
+LinkageMap <- function(xSammon, dist, lineTypes=c("solid","dotted", "dashed"), lineColors=c("red","green","blue"), 
+			lineWidths=c(1,1,1), labels = NULL, cluster = NULL, maxValue=0.5, legendDigits = 2, xlab = "", 
+			ylab = "", main = "")
+	{	 
 
 	library(aplpack)
 
 	# checking input
-	xdim = dim(X)
+	xdim = dim(xSammon)
 	llen = length(labels)
 	clen = length(cluster)
 	if(length(xdim) != 2 || xdim[2] != 2)
 	{
-		print("The dimension of X must be [n, 2]")
+		print("The dimension of xSammon must be [n, 2]")
 	}
-	if(length(linetypes) != length(linecolors) || length(linetypes) != length(linewidths))
+	if(length(lineTypes) != length(lineColors) || length(lineTypes) != length(lineWidths))
 	{
-		print("linetypes, linecolors, and linewidths doesnt contain the same number of elements")
+		print("lineTypes, lineColors, and lineWidths doesnt contain the same number of elements")
 	}
 	if(llen != 0 && llen != xdim[1])
 	{
@@ -49,7 +51,7 @@ LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c
 	{
 		print("maxValue is not between 0 and 1")
 	}	
-	D = as.matrix(D)
+	D = as.matrix(dist)
 
 	#defining the variables to prevent them beeing global visible
 	maps.s = 1
@@ -130,17 +132,17 @@ LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c
 		}
 		#legend("topleft",  
 		#		t, 
-		#		lwd=linewidths, lty=linetypes, col=linecolors)
+		#		lwd=lineWidths, lty=lineTypes, col=lineColors)
 		psize <- par("usr")
 		lsize <- legend(0,0,t, horiz=TRUE, plot=FALSE)
-		legend(psize[1], psize[4]+lsize$rect$h, t, horiz=TRUE, lwd=linewidths, lty=linetypes, col=linecolors)
+		legend(psize[1], psize[4]+lsize$rect$h, t, horiz=TRUE, lwd=lineWidths, lty=lineTypes, col=lineColors)
 	}
 
 	maps.draw <- function(){
 		maps.updateGUI()
 		dev.hold()
 		par(xpd=TRUE, ask=FALSE)
-		plot(X, pch=21,col=maps.circleCols[cluster], bg = maps.clusterCols[cluster], xlab=xlab, ylab=ylab, main=main)
+		plot(xSammon, pch=21,col=maps.circleCols[cluster], bg = maps.clusterCols[cluster], xlab=xlab, ylab=ylab, main=main)
 		for(j in 1:maps.n){		#foreach point
 			for(i in 1:j){		#foreach point (only one direction)
 			      if(i != j)
@@ -149,7 +151,7 @@ LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c
 					index = maps.nLines-k+1
 					if((index == 1 && D[i,j] < maps.s[index]) || (index != 1 && D[i,j] < maps.s[index] && D[i,j] >= maps.s[index-1]))
 					{
-						segments(X[i, 1], X[i,2], X[j,1], X[j,2], lty=linetypes[index], col=linecolors[index], lwd=linewidths[index])
+						segments(xSammon[i, 1], xSammon[i,2], xSammon[j,1], xSammon[j,2], lty=lineTypes[index], col=lineColors[index], lwd=lineWidths[index])
 						break;
 					}
 				    }
@@ -159,7 +161,7 @@ LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c
 		if(length(labels)!=0)
 		{
 			relDist = 0.02
-			text(X[,1]+maps.xRange*relDist,X[,2]+maps.yRange*relDist,labels)
+			text(xSammon[,1]+maps.xRange*relDist,xSammon[,2]+maps.yRange*relDist,labels)
 		}
 		maps.drawLegend()
 		dev.flush()
@@ -179,8 +181,8 @@ LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c
 
 	maps.init <- function()
 	{
-		maps.nLines <<- length(linetypes)
-		maps.n <<- length(X[,1])
+		maps.nLines <<- length(lineTypes)
+		maps.n <<- length(xSammon[,1])
 		if(length(cluster) == 0)
 		{
 			cluster <<- rep(1,maps.n)
@@ -196,8 +198,8 @@ LinkageMap <- function(X, D=dist(X), linetypes=c("solid","dotted"), linecolors=c
 		min <- min(D[D !=0])*0.9	#below smallest nonzero distance
 		max <- max(D)*maxValue
 		maps.s <<- rep(min, maps.nLines)
-		maps.xRange <<- max(X[,1])-min(X[,1])
-		maps.yRange <<- max(X[,2])-min(X[,2])
+		maps.xRange <<- max(xSammon[,1])-min(xSammon[,1])
+		maps.yRange <<- max(xSammon[,2])-min(xSammon[,2])
 
 		slider(maps.sliderCallback, 
 				sl.names=maps.createSliderNames(),

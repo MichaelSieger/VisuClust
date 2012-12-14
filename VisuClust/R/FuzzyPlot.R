@@ -20,12 +20,11 @@
 
 
 
-FuzzyPlot <- function(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=rep(21,dim(probs)[2]), labels=NULL, labelsize=c(0.6, 1.0), xlab="", ylab="", main="",
-			enableLegend=TRUE, cex=1.4)
+FuzzyPlot <- function(xSammon, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=rep(21,dim(probs)[2]), 
+			labels=NULL, labelSize=c(0.6, 1.0), xlab="", ylab="", main="", enableLegend=TRUE, cex=1.4)
 {
 	
 	library(aplpack)
-	library(cluster)
 	
 	#define variables to prevent them beeing global visible
 	fcContext.n = 0
@@ -41,10 +40,10 @@ FuzzyPlot <- function(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSy
 	fcContext.init <- function()
 	{
 		fcContext.k <<- dim(probs)[2]
-		fcContext.xRange <<- max(Xs[,1])-min(Xs[,1])
-		fcContext.yRange <<- max(Xs[,2])-min(Xs[,2])
+		fcContext.xRange <<- max(xSammon[,1])-min(xSammon[,1])
+		fcContext.yRange <<- max(xSammon[,2])-min(xSammon[,2])
 		fcContext.clusterColorValues <<- col2rgb(clusterColors)
-		fcContext.n <<- dim(Xs)[1];
+		fcContext.n <<- dim(xSammon)[1];
 		fcContext.crispClustering <<- fcContext.getNearestCrispClustering()
 		
 		
@@ -174,11 +173,11 @@ FuzzyPlot <- function(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSy
 	
 	fcContext.drawLabels <- function()
 	{
-		probrange <- labelsize[2]-labelsize[1]
+		probrange <- labelSize[2]-labelSize[1]
 		for(i in 1:fcContext.n)
 		{
-			text(Xs[i,1], Xs[i, 2], labels=labels[i], adj=c(1.1, 1.1), 
-				cex=(probrange*fcContext.probabilitys[i] + labelsize[1])
+			text(xSammon[i,1], xSammon[i, 2], labels=labels[i], adj=c(1.1, 1.1), 
+				cex=(probrange*fcContext.probabilitys[i] + labelSize[1])
 			)
 		}
 	}
@@ -190,7 +189,7 @@ FuzzyPlot <- function(Xs, probs, clusterColors=rainbow(dim(probs)[2]), clusterSy
 		fcContext.updateColors()
 		dev.hold()
 		par(xpd=TRUE, ask=FALSE)
-		plot(Xs, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main, cex=cex)
+		plot(xSammon, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main, cex=cex)
 		if(length(labels) != 0)
 		{
 			fcContext.drawLabels()

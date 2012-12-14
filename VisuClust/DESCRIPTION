@@ -4,8 +4,9 @@ Title: VisuClust
 Version: 0.5
 Date: 2012-11-08
 Author: Michael Sieger
-Suggests: MASS
+Suggests: MASS, cluster
+Depends: aplpack
 Maintainer: Michael Sieger <michael.sieger@student.hswt.de>
 Description: The VisuClust package provides functions to display multivariate data, based on Sammon's nonlinear mapping. 
 URL: http://www.hswt.de/fh/fakultaet/gl/dozenten/ohmayer.html
-License: LGPL
+License: LGPL (>= 3)
