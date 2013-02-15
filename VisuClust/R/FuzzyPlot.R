@@ -21,7 +21,7 @@
 
 
 FuzzyPlot <- function(xSammon, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=rep(21,dim(probs)[2]), 
-			labels=NULL, labelSize=c(0.6, 1.0), xlab="", ylab="", main="", enableLegend=TRUE, cex=1.4)
+			labels=NULL, labelSize=c(0.6, 1.0), xlab="", ylab="", main="", enableLegend=TRUE, cex=c(0.7, 1.4))
 {
 	
 	library(aplpack)
@@ -171,6 +171,19 @@ FuzzyPlot <- function(xSammon, probs, clusterColors=rainbow(dim(probs)[2]), clus
 		legend(psize[1], psize[4]+lsize$rect$h, t, horiz=TRUE, col="black", pch=clusterSymbols, pt.bg=clusterColors)
 	}
 	
+	# The scales for the observations depending from the cex argument.
+	fcContext.getObservationsScales <- function()
+	{
+		scales <<- rep(NA, fcContext.n)
+		for(i in 1:fcContext.n)
+		{
+			scales[i] = cex[1] + (cex[2]-cex[1])*fcContext.probabilitys[i]
+		}
+		scales
+	}
+	
+	# Draws the labels
+	# return: nothing
 	fcContext.drawLabels <- function()
 	{
 		probrange <- labelSize[2]-labelSize[1]
@@ -189,7 +202,7 @@ FuzzyPlot <- function(xSammon, probs, clusterColors=rainbow(dim(probs)[2]), clus
 		fcContext.updateColors()
 		dev.hold()
 		par(xpd=TRUE, ask=FALSE)
-		plot(xSammon, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main, cex=cex)
+		plot(xSammon, col="black", bg=fcContext.colors, pch=fcContext.symbols, xlab=xlab, ylab=ylab, main=main, cex=fcContext.getObservationsScales())
 		if(length(labels) != 0)
 		{
 			fcContext.drawLabels()

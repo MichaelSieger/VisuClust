@@ -17,7 +17,7 @@ label size (if labels are set) shows the probability of membership to the select
 }
 \usage{
 FuzzyPlot(xSammon, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=rep(21,dim(probs)[2]), labels=NULL, 
-		labelSize=c(0.6, 1.0), xlab="", ylab="", main="", enableLegend=TRUE, cex=1.4)
+		labelSize=c(0.6, 1.0), xlab="", ylab="", main="", enableLegend=TRUE, cex=c(0.7, 1.4))
 }
 
 \arguments{
@@ -63,7 +63,7 @@ FuzzyPlot(xSammon, probs, clusterColors=rainbow(dim(probs)[2]), clusterSymbols=r
 	Switch legend on/off.
 }
 \item{cex}{
-	A numerical value giving the amount by which plotting text and symbols should be magnified relative to the 
+	Two numerical values in the form c(min,max) giving the amount by which plotting text and symbols should be magnified relative to the 
 	default (as described in \link{par}).
 }
 

@@ -1,1 +1,1 @@
-R CMD check VisuClust_0.5.tar.gz
+R CMD check VisuClust_1.1.tar.gz
