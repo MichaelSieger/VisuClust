@@ -1,7 +1,0 @@
-> plot(1:10)
-> par(xpd=T)
-> plotSize = par("usr")
-> lsize = legend(0,0,"bla", plot=F)
-> plotSize
-[1]  0.64 10.36  0.64 10.36
-> legend(plotSize[2], plotSize[4], "bla")
